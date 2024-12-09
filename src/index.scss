@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --bg: #0D0712;
+    --start-bg: #000000;
+    --white: #ffffff;
+
+    --btn: #40235E;
+
+    --active-link: #B364D8;
+
+    --nav-border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--white);
+    background-color: var(--bg);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img, picture, svg, video, canvas{
+    max-width: 100%;
+    height: auto; 
+    vertical-align: middle;
+    font-style: italic; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+input, button, textarea, select{
+    font: inherit; 
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none;
+    border: none;
+    background: none;
+    color: inherit;
+    line-height: 1;
+}

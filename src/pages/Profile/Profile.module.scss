@@ -1,0 +1,46 @@
+.profile {}
+
+.top {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar {
+    position: relative;
+
+    width: 10.2rem;
+    height: 11.6rem;
+
+    clip-path: polygon(50% 1%, 99% 25%, 99% 75%, 50% 99%, 1% 75%, 1% 25%);
+
+    overflow: hidden;
+
+    &-border {
+
+        position: relative;
+
+        &::before {
+
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 10.2rem;
+            height: 11.6rem;
+
+            background-image: url(../../assets/images/profile/avatar-frame.svg);
+            background-position: center;
+
+            z-index: 10;
+        }
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,55 @@
+.start {
+    padding-top: 1.8rem;
+    padding-bottom: 4rem;
+
+    background-color: var(--start-bg);
+    height: 100vh;
+
+    background-image: url(../../assets/images/start/bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    height: 100%;
+}
+
+.top {
+    display: flex;
+    pointer-events: none;
+    user-select: none;
+}
+
+.logo {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.bottom {
+    margin-top: auto;
+}
+
+.text {
+
+    max-width: 30rem;
+    width: 100%;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--white);
+    
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    letter-spacing: 0.25em;
+
+}
+
+.btn {
+    margin-top: 1.5rem;
+}
