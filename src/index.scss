@@ -10,6 +10,14 @@
     --active-link: #B364D8;
 
     --nav-border: rgba(255, 255, 255, 0.1);
+
+    --gray: #979797;
+
+    --stat-block-bg: rgba(13, 7, 18, 0.2);
+    --stat-block-title: #C4B1D8;
+    --stat-block-score: #B255FF;
+    --stat-block-ship-name: #B255FF;
+    --stat-block-ship-status: #C4B1D8;
 }
 
 html {
@@ -53,6 +61,15 @@ img, picture, svg, video, canvas{
 
 input, button, textarea, select{
     font: inherit; 
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-inline: 0;
 }
 
 button {

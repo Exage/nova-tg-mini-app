@@ -6,16 +6,19 @@ import { Navigation } from './Navigation/Navigation'
 export const MainLayout = () => {
 
     const {
-        ['main-layout']: mainLayout
+        ['main-layout']: mainLayout,
+        wrapper
     } = styles
 
     return (
         <div className={mainLayout}>
 
-            <Outlet />
+            <div className={wrapper}>
+                <Outlet />
+            </div>
 
             <Navigation />
-        
+
         </div>
     )
 }

@@ -1,12 +1,11 @@
 .navigation {
     display: flex;
 
-    max-width: 42rem;
+    max-width: 52rem;
     width: 100%;
 
     position: fixed;
     bottom: 0;
-    left: 0;
 
     border-top: 1px solid var(--nav-border);
 }
