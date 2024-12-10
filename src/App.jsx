@@ -6,6 +6,8 @@ import { MainLayout } from './components/MainLayout/MainLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
+import { Spaceport } from './pages/Spaceport/Spaceport'
+
 import { NotFound } from './pages/NotFound/NotFound'
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
 
                 <Route element={started ? <MainLayout /> : <Navigate to='/' />}>
                     <Route path='profile' element={<Profile />} />
+                    <Route path='spaceport' element={<Spaceport />} />
                     <Route path='*' element={<NotFound />} />
                 </Route>
 

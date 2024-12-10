@@ -28,7 +28,7 @@ const links = [
     },
     {
         title: 'Starship',
-        to: '/starship',
+        to: '/spaceport',
         icon: starshipIcon,
     },
     {

@@ -31,94 +31,95 @@ export const Profile = () => {
     } = styles
 
     return (
-        <div className={profile}>
+        <div className="wrapper">
+            <div className={profile}>
+                <div className={top}>
 
-            <div className={top}>
-
-                <div className={avatarBorder}>
-                    <div className={avatar}>
-                        <img src={avatarPh} alt="" />
+                    <div className={avatarBorder}>
+                        <div className={avatar}>
+                            <img src={avatarPh} alt="" />
+                        </div>
                     </div>
+
+                    <h1 className={name}>
+                        MIKITAUIUX
+                    </h1>
+                    <h2 className={username}>
+                        #mikitauiux
+                    </h2>
+
                 </div>
 
-                <h1 className={name}>
-                    MIKITAUIUX
-                </h1>
-                <h2 className={username}>
-                    #mikitauiux
-                </h2>
+                <div className={stats}>
+                    <div className={block}>
+                        <div className={blockContent}>
+                            <div className={blockText}>
+                                <h2 className={blockTitle}>
+                                    Current Points:
+                                </h2>
+                                <h3 className={blockPoints}>
+                                    2000
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={block}>
+                        <div className={blockContent}>
+                            <div className={blockText}>
+                                <h2 className={blockTitle}>
+                                    Total Points Earned:
+                                </h2>
+                                <h3 className={blockPoints}>
+                                    2000
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={block}>
+                        <div className={blockContent}>
+                            <div className={blockPhoto}>
+                                <img src={photo} alt="" />
+                            </div>
+                            <div className={classNames(blockText, blockTextCenter)}>
+                                <h2 className={blockTitle}>
+                                    Favourite ship:
+                                </h2>
+                                <h3 className={blockSubtitle}>
+                                    Nebula Seeker
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={block}>
+                        <div className={blockContent}>
+                            <div className={blockText}>
+                                <h2 className={blockTitle}>
+                                    Ship Collection:
+                                </h2>
+                                <ul className={blockList}>
+                                    <li className={blockListItem}>
+                                        <span className={shipName}>Stellar Voyager</span>
+                                        <span className={shipStatus}>On mission</span>
+                                    </li>
+                                    <li className={blockListItem}>
+                                        <span className={shipName}>Nebula Seeker</span>
+                                        <span className={shipStatus}>At home</span>
+                                    </li>
+                                    <li className={blockListItem}>
+                                        <span className={shipName}>Cosmic Crusader</span>
+                                        <span className={shipStatus}>On mission</span>
+                                    </li>
+                                    <li className={blockListItem}>
+                                        <span className={shipName}>Astro Pioneer</span>
+                                        <span className={shipStatus}>At home</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-            <div className={stats}>
-                <div className={block}>
-                    <div className={blockContent}>
-                        <div className={blockText}>
-                            <h2 className={blockTitle}>
-                                Current Points:
-                            </h2>
-                            <h3 className={blockPoints}>
-                                2000
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div className={block}>
-                    <div className={blockContent}>
-                        <div className={blockText}>
-                            <h2 className={blockTitle}>
-                                Total Points Earned:
-                            </h2>
-                            <h3 className={blockPoints}>
-                                2000
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div className={block}>
-                    <div className={blockContent}>
-                        <div className={blockPhoto}>
-                            <img src={photo} alt="" />
-                        </div>
-                        <div className={classNames(blockText, blockTextCenter)}>
-                            <h2 className={blockTitle}>
-                                Favourite ship:
-                            </h2>
-                            <h3 className={blockSubtitle}>
-                                Nebula Seeker
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div className={block}>
-                    <div className={blockContent}>
-                        <div className={blockText}>
-                            <h2 className={blockTitle}>
-                                Ship Collection:
-                            </h2>
-                            <ul className={blockList}>
-                                <li className={blockListItem}>
-                                    <span className={shipName}>Stellar Voyager</span>
-                                    <span className={shipStatus}>On mission</span>
-                                </li>
-                                <li className={blockListItem}>
-                                    <span className={shipName}>Nebula Seeker</span>
-                                    <span className={shipStatus}>At home</span>
-                                </li>
-                                <li className={blockListItem}>
-                                    <span className={shipName}>Cosmic Crusader</span>
-                                    <span className={shipStatus}>On mission</span>
-                                </li>
-                                <li className={blockListItem}>
-                                    <span className={shipName}>Astro Pioneer</span>
-                                    <span className={shipStatus}>At home</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     )
 }

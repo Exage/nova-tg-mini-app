@@ -18,6 +18,18 @@
     --stat-block-score: #B255FF;
     --stat-block-ship-name: #B255FF;
     --stat-block-ship-status: #C4B1D8;
+
+    --spaceport-card-bg: #151517;
+    --spaceport-card-stroke: #1D1D20;
+    --spaceport-card-level: #B364D8;
+    --spaceport-stat-stroke: #30303E;
+    --spaceport-stat-button-bg: #2A282D;
+    --spaceport-stat-button-color: #B255FF;
+    --spaceport-stat-button-color-upgraded: #83D987;
+    --spaceport-pagination-inactive: #39393A;
+    --spaceport-pagination-active: #B364D8;
+
+    --ship-type-color-legendary: #DAA520;
 }
 
 html {
@@ -82,4 +94,30 @@ button {
     background: none;
     color: inherit;
     line-height: 1;
+}
+
+.page__title {
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@mixin boxShadowShipType($color) {
+    box-shadow: 0px 0px 2.8px $color
+}
+
+.ship-type {
+
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.2rem;
+
+    &__legendary {
+        background-color: var(--ship-type-color-legendary);
+        @include boxShadowShipType(var(--ship-type-color-legendary));
+    }
 }

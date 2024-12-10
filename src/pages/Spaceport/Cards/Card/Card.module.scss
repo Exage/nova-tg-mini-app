@@ -1,0 +1,126 @@
+.card {
+    position: relative;
+    width: 30rem;
+
+    background-color: var(--spaceport-card-bg);
+    border: 1px solid var(--spaceport-card-stroke);
+    padding: 1.6rem;
+
+    border-radius: 1.7rem;
+}
+
+.level {
+    position: absolute;
+    right: 2rem;
+
+    font-size: 1.6rem;
+
+    line-height: 1;
+    color: var(--spaceport-card-level);
+}
+
+.top {}
+
+.name {
+    font-size: 1.6rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.photo {
+    width: 21.2rem;
+    height: 21.2rem;
+
+    position: relative;
+
+    margin: 0 auto;
+    margin-top: 0.6rem;
+
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.type {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+}
+
+.bottom {
+    margin-top: 0.7rem;
+
+    border: 1px solid var(--spaceport-stat-stroke);
+    border-radius: 1.7rem;
+
+    overflow: hidden;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    padding: 1.4rem;
+}
+
+.stat {
+
+    &__icon {
+        width: 3.5rem;
+        height: 3.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgb(217, 217, 217);
+        background: linear-gradient(150deg, rgba(217, 217, 217, 0.07) 30%, rgba(115, 115, 115, 0) 70%);
+
+        border-radius: 1rem;
+
+        overflow: hidden;
+
+        border: 1px solid var(--spaceport-stat-stroke);
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        font-weight: 500;
+        font-family: "Rubik", sans-serif;
+        margin-top: 0.8rem;
+        text-align: center;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    line-height: 1;
+
+    font-size: 1.4rem;
+
+    background-color: var(--spaceport-stat-button-bg);
+
+    padding: 1.6rem 0;
+    cursor: pointer;
+
+    color: var(--spaceport-stat-button-color);
+    fill: var(--spaceport-stat-button-color);
+
+    &__icon {
+        margin-right: 1rem;
+    }
+
+    &.upgraded {
+        color: var(--spaceport-stat-button-color-upgraded);
+        fill: var(--spaceport-stat-button-color-upgraded);
+    }
+}

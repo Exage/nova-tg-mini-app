@@ -1,7 +1,6 @@
 .main-layout {
     height: 100vh;
 
-    padding-top: 1rem;
     padding-bottom: 7.6rem;
     
     background-image: url(../../assets/images/mainLayout/bg.svg);
@@ -10,7 +9,7 @@
     background-position: center;
 }
 
-.wrapper {
-    padding-left: 2rem;
-    padding-right: 2rem;
+.overflow {
+    height: 100%;
+    overflow: auto;
 }

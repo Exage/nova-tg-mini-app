@@ -7,13 +7,13 @@ export const MainLayout = () => {
 
     const {
         ['main-layout']: mainLayout,
-        wrapper
+        overflow
     } = styles
 
     return (
         <div className={mainLayout}>
 
-            <div className={wrapper}>
+            <div className={overflow}>
                 <Outlet />
             </div>
 
