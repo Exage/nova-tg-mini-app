@@ -1,3 +1,5 @@
+@import '@/mixins';
+
 .card {
     position: relative;
     width: 30rem;
@@ -7,13 +9,18 @@
     padding: 1.6rem;
 
     border-radius: 1.7rem;
+
+    @include response(314px) {
+        width: 100%;
+    }
 }
 
 .level {
-    position: absolute;
-    right: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
 
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
 
     line-height: 1;
     color: var(--spaceport-card-level);
@@ -55,9 +62,6 @@
 .bottom {
     margin-top: 0.7rem;
 
-    border: 1px solid var(--spaceport-stat-stroke);
-    border-radius: 1.7rem;
-
     overflow: hidden;
 }
 
@@ -84,8 +88,16 @@
         border-radius: 1rem;
 
         overflow: hidden;
+        
+        user-select: none;
+        pointer-events: none;
 
         border: 1px solid var(--spaceport-stat-stroke);
+    
+        img {
+            user-select: none;
+            pointer-events: none;
+        }
     }
 
     &__label {
@@ -98,29 +110,35 @@
 }
 
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    line-height: 1;
-
-    font-size: 1.4rem;
-
-    background-color: var(--spaceport-stat-button-bg);
-
-    padding: 1.6rem 0;
-    cursor: pointer;
-
-    color: var(--spaceport-stat-button-color);
-    fill: var(--spaceport-stat-button-color);
-
-    &__icon {
-        margin-right: 1rem;
-    }
-
-    &.upgraded {
-        color: var(--spaceport-stat-button-color-upgraded);
-        fill: var(--spaceport-stat-button-color-upgraded);
-    }
+    max-width: 21.2rem;
+    margin: 0 auto;
 }
+
+// .button {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+
+//     line-height: 1;
+
+//     font-size: 1.4rem;
+
+//     border-top: 1px solid var(--spaceport-stat-stroke);
+//     background-color: var(--spaceport-stat-button-bg);
+
+//     padding: 1.6rem 0;
+//     cursor: pointer;
+
+//     color: var(--spaceport-stat-button-color);
+//     fill: var(--spaceport-stat-button-color);
+
+//     &__icon {
+//         margin-right: 1rem;
+//     }
+
+//     &.upgraded {
+//         color: var(--spaceport-stat-button-color-upgraded);
+//         fill: var(--spaceport-stat-button-color-upgraded);
+//     }
+// }

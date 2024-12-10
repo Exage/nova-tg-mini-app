@@ -11,6 +11,7 @@ import stat2 from '@/assets/icons/spaceport/stat_2.svg'
 import stat3 from '@/assets/icons/spaceport/stat_3.svg'
 
 import upgradeIcon from '@/assets/icons/spaceport/upgrade.svg'
+import { Button } from '@/components/UI/Button/Button'
 
 export const Card = ({ upgraded }) => {
 
@@ -34,12 +35,12 @@ export const Card = ({ upgraded }) => {
     return (
         <div className={card}>
 
-            <span className={level}>1 lvl</span>
 
             <div className={top}>
-                <h3 className={name}>
+                <h2 className={name}>
                     Nebula seeker
-                </h3>
+                </h2>
+                <h3 className={level}>1 lvl</h3>
             </div>
 
             <div className={photo}>
@@ -72,19 +73,15 @@ export const Card = ({ upgraded }) => {
                             <img src={stat3} alt="" />
                         </div>
                         <h3 className={statLabel}>
-                            15
+                            1.5
                         </h3>
                     </div>
 
                 </div>
 
-                <button className={classNames(button, { [upgradedClass]: upgraded })}>
-                    <ReactSVG 
-                        src={upgradeIcon}
-                        className={buttonIcon} 
-                    />
+                <Button className={[button]}>
                     Upgrade
-                </button>
+                </Button>
 
             </div>
 

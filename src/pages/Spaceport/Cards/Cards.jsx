@@ -22,8 +22,13 @@ export const Cards = () => {
                     el: '.spaceport-pagintaion'
                 }}
                 centeredSlides={true}
-                slidesPerView={'auto'}
+                slidesPerView={1}
                 spaceBetween={7}
+                breakpoints={{
+                    314: {
+                        slidesPerView: 'auto'
+                    }
+                }}
             >
                 <SwiperSlide className={slide}>
                     <Card />

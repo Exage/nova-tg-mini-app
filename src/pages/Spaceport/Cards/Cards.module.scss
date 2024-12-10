@@ -1,9 +1,16 @@
+@import '@/mixins';
+
 .cards {
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .slide {
     width: fit-content;
+
+    @include response(314px) {
+        width: 100%;
+        padding: 0 0.7rem;
+    }
 }
 
 .pagintaion {
