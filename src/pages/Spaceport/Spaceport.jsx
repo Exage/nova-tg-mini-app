@@ -9,15 +9,17 @@ export const Spaceport = () => {
 
     return (
         <div className={spaceport}>
+            <div className="page__paddings-vertical">
 
-            <div className="wrapper">
-                <h1 className='page__title'>
-                    Spaceport
-                </h1>
+                <div className="wrapper">
+                    <h1 className='page__title'>
+                        Spaceport
+                    </h1>
+                </div>
+
+                <Cards />
+
             </div>
-
-            <Cards />
-
         </div>
     )
 }

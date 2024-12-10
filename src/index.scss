@@ -34,10 +34,14 @@
     --ship-type-color-legendary: #DAA520;
 
     --overlay: rgba(15, 9, 22, 0.76);
-    
+
     --reward-bg: #151517;
     --reward-cart-stroke: #30303E;
     --reward-cart-stroke-earned: #B255FF;
+
+    --quest-item-icon-stroke: #543C6B;
+    --quest-item-bg: #3E225A;
+    --quest-item-stroke: #A17FF1;
 }
 
 html {
@@ -61,7 +65,13 @@ body {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
@@ -70,20 +80,28 @@ a {
     text-decoration: none;
 }
 
-img, picture, svg, video, canvas{
+img,
+picture,
+svg,
+video,
+canvas {
     max-width: 100%;
-    height: auto; 
+    height: auto;
     vertical-align: middle;
-    font-style: italic; 
-    background-repeat: no-repeat; 
+    font-style: italic;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
-input, button, textarea, select{
-    font: inherit; 
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -108,6 +126,11 @@ button {
     font-size: 3.2rem;
     font-weight: 500;
     color: var(--white);
+}
+
+.page__paddings-vertical {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
 }
 
 .wrapper {

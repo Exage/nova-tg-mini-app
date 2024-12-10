@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from './Card.module.scss'
 
-import currencyBig from '@/assets/icons/rewards/currency-big.svg'
+import currencyBig from '@/assets/images/gem-big.svg'
 
 export const Card = ({ claimed }) => {
 

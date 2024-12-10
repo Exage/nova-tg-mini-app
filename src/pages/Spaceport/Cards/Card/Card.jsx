@@ -1,16 +1,14 @@
 import React from 'react'
-import { ReactSVG } from 'react-svg'
+import classNames from 'classnames'
 
 import styles from './Card.module.scss'
 
 import ship from '@/assets/images/spaceport/ship.jpg'
-import classNames from 'classnames'
 
-import stat1 from '@/assets/icons/spaceport/stat_1.svg'
-import stat2 from '@/assets/icons/spaceport/stat_2.svg'
-import stat3 from '@/assets/icons/spaceport/stat_3.svg'
+import stat1 from '@/assets/images/spaceport/stat_1.svg'
+import stat2 from '@/assets/images/spaceport/stat_2.svg'
+import stat3 from '@/assets/images/spaceport/stat_3.svg'
 
-import upgradeIcon from '@/assets/icons/spaceport/upgrade.svg'
 import { Button } from '@/components/UI/Button/Button'
 
 export const Card = ({ upgraded }) => {

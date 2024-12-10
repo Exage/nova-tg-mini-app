@@ -4,11 +4,11 @@ import { ReactSVG } from 'react-svg'
 
 import styles from './Navigation.module.scss'
 
-import profileIcon from '@/assets/icons/navigation/profile.svg'
-import friendsIcon from '@/assets/icons/navigation/friends.svg'
-import playIcon from '@/assets/icons/navigation/play.svg'
-import starshipIcon from '@/assets/icons/navigation/starship.svg'
-import rewardsIcon from '@/assets/icons/navigation/rewards.svg'
+import profileIcon from '@/assets/images/navigation/profile.svg'
+import friendsIcon from '@/assets/images/navigation/friends.svg'
+import playIcon from '@/assets/images/navigation/play.svg'
+import starshipIcon from '@/assets/images/navigation/starship.svg'
+import rewardsIcon from '@/assets/images/navigation/rewards.svg'
 
 const links = [
     {
@@ -33,7 +33,7 @@ const links = [
     },
     {
         title: 'Rewards',
-        to: '/rewards',
+        to: '/quests',
         icon: rewardsIcon,
     },
 ]

@@ -1,0 +1,67 @@
+.quest {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    border-radius: 1.4rem;
+
+    border: 1px solid var(--quest-item-stroke);
+    background-color: var(--quest-item-bg);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 5rem;
+    height: 5rem;
+
+    flex-shrink: 0;
+    
+    border: 1px solid var(--quest-item-icon-stroke);
+    background: linear-gradient(150deg, rgba(217, 217, 217, 0.05) 30%, rgba(115, 115, 115, 0.12) 70%);
+
+    border-radius: 1rem;
+}
+
+.content {
+    padding-left: 1.6rem;
+    flex: 1;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.gems {
+    
+    display: flex;
+    align-items: center;
+
+    font-size: 1.4rem;
+    line-height: 1;
+
+    margin-top: 0.4rem;
+
+    &::before {
+        content: '';
+
+        display: block;
+
+        width: 1.8rem;
+        height: 2.4rem;
+
+        background-image: url(@/assets/images/gem-small.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        margin-right: 0.5rem;
+    }
+}
+
+.arrow {
+    flex-shrink: 0;
+}

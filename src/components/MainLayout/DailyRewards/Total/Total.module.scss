@@ -16,7 +16,10 @@
         display: inline-block;
         width: 1.2rem;
         height: 1.5rem;
-        background-image: url(@/assets/icons/rewards/currency-small.svg);
+        background-image: url(@/assets/images/gem-small.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         margin-right: 0.3rem;
         transform: translateY(0.1rem);
     }
