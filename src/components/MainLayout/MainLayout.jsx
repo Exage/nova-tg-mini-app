@@ -1,7 +1,10 @@
 import React from 'react'
 import styles from './MainLayout.module.scss'
+
 import { Outlet } from 'react-router'
+
 import { Navigation } from './Navigation/Navigation'
+import { DailyRewards } from './DailyRewards/DailyRewards'
 
 export const MainLayout = () => {
 
@@ -18,6 +21,8 @@ export const MainLayout = () => {
             </div>
 
             <Navigation />
+
+            <DailyRewards />
 
         </div>
     )
