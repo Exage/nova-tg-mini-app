@@ -11,28 +11,32 @@ const missionsList = [
         title: 'Terra Prime',
         thumbnail,
         description: 'A nearby planet with basic resources. Perfect for beginners.',
-        points: 0.3
+        points: 0.3,
+        distance: 5 
     },
     {
         id: '456',
         title: 'Luminara',
         thumbnail,
         description: 'Covered in shimmering crystals. Easy to mine.',
-        points: 0.6
+        points: 0.6,
+        distance: 10
     },
     {
         id: '789',
         title: 'Nova Vortex',
         thumbnail,
         description: 'A zone of high activity. Great rewards await!',
-        points: 1.2
+        points: 1.2,
+        distance: 20
     },
     {
         id: '101112',
         title: 'Ecliptica',
         thumbnail,
         description: 'A planet on the edge of the solar system. High-yield mining.',
-        points: 2.5
+        points: 2.5,
+        distance: 40
     },
 ]
 
