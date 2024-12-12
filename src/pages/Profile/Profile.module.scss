@@ -145,6 +145,8 @@
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
         position: relative;
         padding: 1rem;
 
@@ -154,6 +156,10 @@
     }
 
     &__text {
+        
+        margin: auto;
+        width: 100%;
+
         &-center {
             text-align: center;
         }
@@ -198,11 +204,11 @@
     &__photo {
         margin: -0.9rem;
         margin-bottom: 0.6rem;
-        height: 12.2rem;
 
         img {
             width: 100%;
             height: 100%;
+            min-height: 12.2rem;
 
             object-fit: cover;
         }
