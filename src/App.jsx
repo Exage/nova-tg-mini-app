@@ -8,12 +8,16 @@ import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
 import { Spaceport } from './pages/Spaceport/Spaceport'
 import { Quests } from './pages/Rewards/Quests'
+import { Play } from './pages/Play/Play'
+import { Missions } from './pages/Play/Missions/Missions'
+import { Spaceships } from './pages/Play/Spaceships/Spaceships'
+import { Ticket } from './pages/Play/Ticket/Ticket'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
 function App() {
 
-    const [started, setStarted] = useState(false)
+    const [started, setStarted] = useState(true)
 
     return (
         <div className="App">
@@ -25,6 +29,11 @@ function App() {
                     <Route path='profile' element={<Profile />} />
                     <Route path='spaceport' element={<Spaceport />} />
                     <Route path='quests' element={<Quests />} />
+                    <Route path='play' element={<Play />}>
+                        <Route index element={<Missions />} />
+                        <Route path='spaceships' element={<Spaceships />} />
+                        <Route path='ticket' element={<Ticket />} />
+                    </Route>
                     <Route path='*' element={<NotFound />} />
                 </Route>
 
