@@ -1,10 +1,10 @@
 import React from 'react'
 
-import styles from './Ticket.module.scss'
+import styles from './Confirm.module.scss'
 
 import { useLocation } from 'react-router'
 
-export const Ticket = () => {
+export const Confirm = () => {
 
     const location = useLocation()
 

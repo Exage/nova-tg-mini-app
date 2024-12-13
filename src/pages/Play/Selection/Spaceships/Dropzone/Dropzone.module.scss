@@ -1,0 +1,17 @@
+.dropzone {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.6rem;
+    row-gap: 0.8rem;
+    min-height: 10.7rem;
+
+    margin-top: 1.3rem;
+
+    &.over {
+        background-color: red;
+    }
+}
+
+.block {
+
+}

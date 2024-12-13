@@ -10,8 +10,8 @@ import { Spaceport } from './pages/Spaceport/Spaceport'
 import { Quests } from './pages/Rewards/Quests'
 import { Play } from './pages/Play/Play'
 import { Missions } from './pages/Play/Missions/Missions'
-import { Spaceships } from './pages/Play/Spaceships/Spaceships'
-import { Ticket } from './pages/Play/Ticket/Ticket'
+import { Selection } from './pages/Play/Selection/Selection'
+import { Confirm } from './pages/Play/Confirm/Confirm'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -31,8 +31,8 @@ function App() {
                     <Route path='quests' element={<Quests />} />
                     <Route path='play' element={<Play />}>
                         <Route index element={<Missions />} />
-                        <Route path='spaceships' element={<Spaceships />} />
-                        <Route path='ticket' element={<Ticket />} />
+                        <Route path='selection' element={<Selection />} />
+                        <Route path='confirm' element={<Confirm />} />
                     </Route>
                     <Route path='*' element={<NotFound />} />
                 </Route>

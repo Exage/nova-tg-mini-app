@@ -8,10 +8,10 @@ export const Card = ({ data }) => {
     const { distance, card, inner, photo, name, description, points } = styles
 
     return (
-        <Link to={`/play/spaceships?missionId=${data.id}`} className={card}>
+        <Link to={`/play/selection?missionId=${data.id}`} className={card}>
             <div className={inner}>
                 <div className={distance}>
-                    {data.distance} km
+                    {data.distance}
                 </div>
                 <div className={photo}>
                     <img src={data.thumbnail} alt={data.name} />
