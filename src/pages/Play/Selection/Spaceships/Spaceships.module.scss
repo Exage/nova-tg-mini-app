@@ -2,7 +2,7 @@
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 1.6rem;
+        column-gap: 0.8rem;
         row-gap: 0.8rem;
 
         margin-top: 1rem;
@@ -11,17 +11,17 @@
 
 .dropzone__block {
     position: relative;
-}
 
-.dropzone__block-close {
-    position: absolute;
-    top: -0.5rem;
-    right: -0.2rem;
+    &-close {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.2rem;
 
-    width: 2rem;
-    height: 2rem;
+        width: 2rem;
+        height: 2rem;
 
-    cursor: pointer;
+        cursor: pointer;
 
-    z-index: 5;
+        z-index: 5;
+    }
 }

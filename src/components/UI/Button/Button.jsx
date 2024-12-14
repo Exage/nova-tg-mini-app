@@ -1,18 +1,17 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import styles from './Button.module.scss'
+import './Button.scss'
 
-export const Button = ({ className = [], children, ...props }) => {
-
-    const { btn, outline, text } = styles
+export const Button = ({ disabled = false, className = [], children, ...props }) => {
 
     return (
         <button
-            className={classNames(btn, ...className)}
+            className={classNames('btn', ...className)}
+            disabled={disabled}
             {...props}
         >
-            <span className={text}>
+            <span className='btn__text'>
                 {children}
             </span>
         </button>

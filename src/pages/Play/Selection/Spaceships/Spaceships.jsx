@@ -3,7 +3,7 @@ import styles from './Spaceships.module.scss'
 
 import { ReactSVG } from 'react-svg'
 
-import { DndContext } from '@dnd-kit/core'
+import { DndContext, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 
 import { Spaceship } from './Spaceship/Spaceship'
 import { Dropzone } from './Dropzone/Dropzone'
@@ -15,31 +15,36 @@ const spaceshipsList = [
     {
         id: 'q111',
         name: 'Starship 1',
+        type: 'legendary',
         photo: shipPh
     },
     {
         id: 'b222',
         name: 'Starship 2',
+        type: 'epic',
         photo: shipPh
     },
     {
         id: 'm333',
         name: 'Starship 3',
+        type: 'common',
         photo: shipPh
     },
     {
         id: 'z222',
         name: 'Starship 4',
+        type: 'premium',
         photo: shipPh
     },
     {
         id: 'b773',
         name: 'Starship 5',
+        type: 'rare',
         photo: shipPh
     },
 ]
 
-export const Spaceships = () => {
+export const Spaceships = ({ chosenSpaceships, setChosenSpaceships }) => {
 
     const {
         chose,
@@ -48,6 +53,14 @@ export const Spaceships = () => {
         ['dropzone__block-close']: dropzoneClose
     } = styles
 
+    const sensors = useSensors(
+        useSensor(PointerSensor, {
+            activationConstraint: {
+                distance: 8
+            }
+        })
+    )
+
     const [spaceships, setSpaceships] = useState(null)
 
     useEffect(() => {
@@ -55,9 +68,7 @@ export const Spaceships = () => {
         setSpaceships(currentSpaceships)
     }, [])
 
-    const [chosenSpaceships, setChosenSpaceships] = useState([])
-
-    const maxShips = 3
+    const maxShips = 1
 
     const handleDragEnd = (event) => {
         const { active, over } = event
@@ -85,14 +96,29 @@ export const Spaceships = () => {
         )
     }
 
+    const handleClick = (item) => {
+        if (!item.disabled && (chosenSpaceships.length < maxShips)) {
+            setChosenSpaceships([...chosenSpaceships, item])
+            setSpaceships(
+                spaceships.map((i) =>
+                    i.spaceship.id === item.spaceship.id ? { ...i, disabled: true } : i
+                )
+            )
+        }
+    }
+
+
     return (
-        <DndContext onDragEnd={handleDragEnd}>
+        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
             <div className={chose}>
 
-                <Dropzone id="dropzone">
+                <Dropzone 
+                    id="dropzone"
+                    emtptyBlocksCount={maxShips - chosenSpaceships.length}
+                >
                     {chosenSpaceships.map((item) => (
                         <div key={`dropzone-spacechip-${item.spaceship.id}`} className={dropzoneBlock}>
-                            <Spaceship id={item.spaceship.id} data={item.spaceship} disabled={true} />
+                            <Spaceship id={item.spaceship.id} data={item.spaceship} disabled={true} isChosen={false} />
                             <button className={dropzoneClose} onClick={() => handleRemoveFromChosen(item)}>
                                 <ReactSVG src={removeIcon} />
                             </button>
@@ -101,16 +127,24 @@ export const Spaceships = () => {
                 </Dropzone>
 
                 <div className={spacechipsWrapper}>
-                    {spaceships && spaceships.map((item) => (
-                        <Spaceship
-                            key={`spaceship-${item.spaceship.id}-${item.disabled}`}
-                            id={item.spaceship.id}
-                            data={item.spaceship}
-                            disabled={item.disabled}
+                    {spaceships && spaceships.map((item) => {
 
-                            chosenSpaceships={chosenSpaceships}
-                        />
-                    ))}
+                        const isChosen = chosenSpaceships.find(i => i.spaceship.id === item.spaceship.id)
+
+                        return (
+                            <Spaceship
+                                key={`spaceship-${item.spaceship.id}-${item.disabled}`}
+                                id={item.spaceship.id}
+                                data={item.spaceship}
+                                disabled={item.disabled}
+
+                                onClick={() => handleClick(item)}
+
+                                isChosen={isChosen}
+                            />
+                        )
+
+                    })}
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 .spaceship {
     position: relative;
-    height: 10.7rem;
+    height: $choseShipsBlockHeight;
     border-radius: 1.2rem;
     overflow: hidden;
 
@@ -51,4 +51,12 @@
         bottom: 3rem;
         background: linear-gradient(60deg, rgba(48, 37, 77, 1) 0%, rgba(48, 37, 77, 0) 35%, rgba(48, 37, 77, 0) 58%, rgba(48, 37, 77, 1) 100%);
     }
+}
+
+.type {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+
+    font-size: 0.8rem !important;
 }
