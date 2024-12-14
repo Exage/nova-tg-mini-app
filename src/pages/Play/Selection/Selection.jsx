@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Selection.module.scss'
 
 import { Spaceships } from './Spaceships/Spaceships'
 import { LinkButton } from '@/components/UI/LinkButton/LinkButton'
 
-import { useLocation } from 'react-router'
+import { Navigate, useLocation } from 'react-router'
 
 export const Selection = () => {
 
@@ -14,6 +14,10 @@ export const Selection = () => {
     const data = location.state
 
     const [chosenSpaceships, setChosenSpaceships] = useState([])
+
+    if (!data.missionId) {
+        return <Navigate to='/play' />
+    }
 
     return (
         <div>
