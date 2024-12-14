@@ -1,0 +1,77 @@
+.route {
+    display: flex;
+
+    & > .destination:first-child > .name {
+        text-align: left;
+    }
+    & > .destination:first-child > .subname {
+        text-align: left;
+    }
+    & > .destination:first-child > .time {
+        text-align: left;
+    }
+    & > .destination:first-child > .date {
+        text-align: left;
+    }
+
+    & > .destination:last-child > .name {
+        text-align: right;
+    }
+    & > .destination:last-child > .subname {
+        text-align: right;
+    }
+    & > .destination:last-child > .time {
+        text-align: right;
+    }
+    & > .destination:last-child > .date {
+        text-align: right;
+    }
+}
+
+.destination {
+    max-width: 8.6rem;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--ticket-primary);
+}
+
+.subname {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--ticket-secondary);
+    margin-top: 0.2rem;
+}
+
+.time {
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--ticket-primary);
+}
+
+.date {
+    margin-top: 0.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ticket-secondary);
+}
+
+.divider {
+    flex: 1;
+    padding: 2.5rem;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+
+    border-radius: 2px;
+
+    border: 1px solid var(--ticket-line-stroke);
+    background-color: var(--ticket-line-bg);
+
+    box-shadow: 0 0 3px var(--ticket-line-bg);
+}
