@@ -1,0 +1,49 @@
+.ticket {
+    padding: 2.5rem;
+    background-color: var(--ticket-bg);
+    border-radius: 4rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--ticket-top);
+    text-transform: uppercase;
+}
+
+.routes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    margin-top: 1.6rem;
+
+    padding-bottom: 3rem;
+    border-bottom: 2px dashed var(--ticket-divider);
+}
+
+.bottom {
+    max-width: 30.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 8rem;
+
+    background-image: url(@/assets/images/play/pass.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &__label {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--ticket-secondary);
+    }
+}
+
+.button {
+    margin-top: 1.2rem;
+}

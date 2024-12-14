@@ -6,7 +6,8 @@
     --white: #ffffff;
     --white-rgb: 255, 255, 255;
 
-    --btn: #40235E;
+    --btn: #7440A9;
+    --btn-disabled: #40235E;
 
     --active-link: #B364D8;
 
@@ -31,7 +32,11 @@
     --spaceport-pagination-inactive: #39393A;
     --spaceport-pagination-active: #B364D8;
 
+    --ship-type-color-common: #1FDBFA;
+    --ship-type-color-epic: #B255FF;
+    --ship-type-color-rare: #B8860B;
     --ship-type-color-legendary: #DAA520;
+    --ship-type-color-premium: #D1B104;
 
     --overlay: rgba(15, 9, 22, 0.76);
 
@@ -42,6 +47,22 @@
     --quest-item-icon-stroke: #543C6B;
     --quest-item-bg: #3E225A;
     --quest-item-stroke: #A17FF1;
+
+    --mission-card-stroke: #A17FF1;
+    --mission-card-bg: #3E225A;
+
+    --chose-spaceship-name-bg: rgba(13, 7, 18, 0.2);
+    --chose-spaceship-block-bg: rgba(13, 7, 18, 0.2);
+    --chose-spaceship-coming-soon: #908E92;
+    --chose-spaceship-block-empty-over-bg: rgba(178, 85, 255, 0.2);
+
+    --ticket-bg: #20132E;
+    --ticket-top: #7A6392;
+    --ticket-primary: #E6E5E6;
+    --ticket-secondary: #C4B1D8;
+    --ticket-divider: #655495;
+    --ticket-line-bg: #D3C1E6;
+    --ticket-line-stroke: #9883AE;
 }
 
 html {
@@ -144,11 +165,35 @@ button {
 
 .ship-type {
 
-    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+
+    padding: 0.4em 0.6em;
     border-radius: 0.2rem;
+
+    text-transform: capitalize;
+
+    &__common {
+        background-color: var(--ship-type-color-common);
+        @include boxShadowShipType(var(--ship-type-color-common));
+    }
+
+    &__epic {
+        background-color: var(--ship-type-color-epic);
+        @include boxShadowShipType(var(--ship-type-color-epic));
+    }
+
+    &__rare {
+        background-color: var(--ship-type-color-rare);
+        @include boxShadowShipType(var(--ship-type-color-rare));
+    }
 
     &__legendary {
         background-color: var(--ship-type-color-legendary);
         @include boxShadowShipType(var(--ship-type-color-legendary));
+    }
+
+    &__premium {
+        background-color: var(--ship-type-color-premium);
+        @include boxShadowShipType(var(--ship-type-color-premium));
     }
 }

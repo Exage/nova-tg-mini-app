@@ -1,0 +1,62 @@
+.spaceship {
+    position: relative;
+    height: $choseShipsBlockHeight;
+    border-radius: 1.2rem;
+    overflow: hidden;
+
+    user-select: none;
+    touch-action: none;
+
+    &.chosen {
+        opacity: 0.3;
+    }
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    width: 100%;
+    height: 3rem;
+
+    line-height: 1;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    background-color: var(--chose-spaceship-name-bg);
+    backdrop-filter: blur(20px);
+
+    &__divider {
+        width: 100%;
+        height: 0.1rem;
+        position: absolute;
+        left: 0;
+        bottom: 3rem;
+        background: linear-gradient(60deg, rgba(48, 37, 77, 1) 0%, rgba(48, 37, 77, 0) 35%, rgba(48, 37, 77, 0) 58%, rgba(48, 37, 77, 1) 100%);
+    }
+}
+
+.type {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+
+    font-size: 0.8rem !important;
+}

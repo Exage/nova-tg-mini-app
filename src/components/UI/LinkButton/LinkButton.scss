@@ -1,0 +1,18 @@
+.link-btn {
+    &__disabled {
+        cursor: no-drop;
+        // pointer-events: none;
+        // touch-action: none;
+
+        background: var(--btn-disabled);
+
+        &::after {
+            background: rgba(105, 67, 152, 0);
+            background: linear-gradient(37deg, rgba(105, 67, 152, 1) 0%, rgba(47, 34, 63, 0) 37%, rgba(71, 48, 99, 0) 57%, rgba(97, 64, 138, 1) 100%);
+        }
+
+        &>.btn__text {
+            background-color: var(--btn-disabled);
+        }
+    }
+}
