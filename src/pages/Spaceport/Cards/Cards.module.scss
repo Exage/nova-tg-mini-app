@@ -1,5 +1,3 @@
-@import '@/mixins';
-
 .cards {
     margin-top: 3rem;
 }
@@ -7,7 +5,7 @@
 .slide {
     width: fit-content;
 
-    @include response(314px) {
+    @include response($spaceportBp) {
         width: 100%;
         padding: 0 0.7rem;
     }
@@ -20,19 +18,25 @@
 
     margin-top: 1rem;
 
-    --swiper-pagination-bullet-width: 0.3rem;
-    --swiper-pagination-bullet-height: 0.3rem;
-    --swiper-pagination-bullet-border-radius: 0.15rem;
+    --swiper-pagination-bullet-width: 0.5rem;
+    --swiper-pagination-bullet-height: 0.5rem;
+    --swiper-pagination-bullet-border-radius: 0.25rem;
     --swiper-pagination-color: var(--spaceport-pagination-active);
     --swiper-pagination-bullet-inactive-color: var(--spaceport-pagination-inactive);
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 0;
 
     :global(.swiper-pagination-bullet) {
-        transition: width .2s ease;
+        transition: width .3s ease;
     }
 
     :global(.swiper-pagination-bullet.swiper-pagination-bullet-active) {
-        --swiper-pagination-bullet-width: 1rem;
+        --swiper-pagination-bullet-width: 3.5rem;
+    }
+}
+
+.button {
+    &__wrapper {
+        margin-top: 2.2rem;
     }
 }

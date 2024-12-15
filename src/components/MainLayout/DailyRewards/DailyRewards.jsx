@@ -11,7 +11,7 @@ export const DailyRewards = () => {
 
     const { overlay, active, dialog, claim, ['claim__wrapper']: claimWrapper } = styles
 
-    const [showWidnow, setShowWindow] = useState(true)
+    const [showWidnow, setShowWindow] = useState(false)
 
     const closeWindow = () => {
         setShowWindow(false)

@@ -6,10 +6,14 @@ import App from './App.jsx'
 
 import './index.scss'
 
+import { ModalsContextProvider } from './context/ModalsContext.jsx'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <ModalsContextProvider>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </ModalsContextProvider>
     </React.StrictMode>
 )
