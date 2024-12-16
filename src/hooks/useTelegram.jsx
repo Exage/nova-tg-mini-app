@@ -12,6 +12,7 @@ export const useTelegram = () => {
 
     return {
         tg,
+        platform: tg.platform, 
         user: tg.initDataUnsafe?.user
     }
 }

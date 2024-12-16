@@ -9,6 +9,10 @@
     background-position: center;
 
     // touch-action: none;
+
+    &.ios {
+        padding-bottom: 9.6rem;
+    }
 }
 
 .overflow {

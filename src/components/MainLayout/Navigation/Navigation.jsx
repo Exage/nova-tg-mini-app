@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import { NavLink } from 'react-router'
 import { ReactSVG } from 'react-svg'
 
@@ -10,7 +11,9 @@ import playIcon from '@/assets/images/navigation/play.svg'
 import starshipIcon from '@/assets/images/navigation/starship.svg'
 import rewardsIcon from '@/assets/images/navigation/rewards.svg'
 
-const links = [
+import { useTelegram } from '@/hooks/useTelegram'
+
+const linksList = [
     {
         title: 'Profile',
         to: '/profile',
@@ -35,30 +38,34 @@ const links = [
         title: 'Rewards',
         to: '/quests',
         icon: rewardsIcon,
-    },
+    }
 ]
 
 export const Navigation = () => {
 
-    const { navigation, link, active, icon, title } = styles
+    const { navigation, links, link, active, icon, title, ios } = styles
+
+    const { platform } = useTelegram()
 
     return (
-        <div className={navigation}>
-            {links.map((item, index) => (
-                <NavLink
-                    key={index}
-                    to={item.to}
-                    className={({ isActive }) => isActive ? `${link} ${active}` : link}
-                >
-                    <ReactSVG
-                        className={icon}
-                        src={item.icon}
-                    />
-                    <h3 className={title}>
-                        {item.title}
-                    </h3>
-                </NavLink>
-            ))}
+        <div className={classNames(navigation, { [ios]: platform === 'ios' })}>
+            <div className={links}>
+                {linksList.map((item, index) => (
+                    <NavLink
+                        key={index}
+                        to={item.to}
+                        className={({ isActive }) => isActive ? `${link} ${active}` : link}
+                    >
+                        <ReactSVG
+                            className={icon}
+                            src={item.icon}
+                        />
+                        <h3 className={title}>
+                            {item.title}
+                        </h3>
+                    </NavLink>
+                ))}
+            </div>
         </div>
     )
 }

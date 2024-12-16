@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import styles from './MainLayout.module.scss'
 
 import { Outlet } from 'react-router'
@@ -8,15 +9,20 @@ import { DailyRewards } from './DailyRewards/DailyRewards'
 
 import { UpgradeShip } from '@/modals/UpgradeShip/UpgradeShip'
 
+import { useTelegram } from '@/hooks/useTelegram'
+
 export const MainLayout = () => {
 
     const {
         ['main-layout']: mainLayout,
-        overflow
+        overflow,
+        ios
     } = styles
 
+    const { platform } = useTelegram()
+
     return (
-        <div className={mainLayout}>
+        <div className={classNames(mainLayout, { [ios]: platform === 'ios' } )}>
 
             <div className={overflow}>
                 <Outlet />
