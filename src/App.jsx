@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import './App.scss'
 
@@ -16,9 +16,19 @@ import { Refferal } from './pages/Refferal/Refferal'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
+import { useTelegram } from './hooks/useTelegram'
+
 function App() {
 
+    const { user } = useTelegram()
+
     const [started, setStarted] = useState(true)
+
+    useEffect(() => {
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 0) window.scrollTo(0, 0)
+        // })
+    }, [])
 
     return (
         <div className="App">

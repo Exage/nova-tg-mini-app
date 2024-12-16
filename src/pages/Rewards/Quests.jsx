@@ -41,7 +41,87 @@ const questsList = [
         title: 'Go to our Discord channel',
         icon: discordIcon,
         gems: 0.3
-    }
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
+    {
+        title: 'Go to our Discord channel',
+        icon: discordIcon,
+        gems: 0.3
+    },
 ]
 
 export const Quests = () => {
@@ -53,7 +133,7 @@ export const Quests = () => {
             <div className="wrapper page__paddings-vertical">
                 
                 <h1 className='page__title'>
-                    Quests
+                    Quests 123
                 </h1>
 
                 <div className={items}>
