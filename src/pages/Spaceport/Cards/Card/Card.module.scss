@@ -1,50 +1,62 @@
-@import '@/mixins';
-
 .card {
     position: relative;
-    width: 30rem;
+    width: 35rem;
+    height: 35rem;
+
+    overflow: hidden;
 
     background-color: var(--spaceport-card-bg);
     border: 1px solid var(--spaceport-card-stroke);
-    padding: 1.6rem;
 
     border-radius: 1.7rem;
 
-    @include response(314px) {
+    @include response($spaceportBp) {
         width: 100%;
     }
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 15rem;
+
+    padding: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px)
+}
+.top {}
+
+.name {
+    font-size: 2.4rem;
+    line-height: 1;
+    text-align: center;
 }
 
 .level {
     text-align: center;
     margin-top: 0.5rem;
 
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: 500;
 
     line-height: 1;
     color: var(--spaceport-card-level);
 }
 
-.top {}
-
-.name {
-    font-size: 1.6rem;
-    line-height: 1;
-    text-align: center;
-}
 
 .photo {
-    width: 21.2rem;
-    height: 21.2rem;
-
-    position: relative;
-
-    margin: 0 auto;
-    margin-top: 0.6rem;
-
-    border-radius: 0.8rem;
+    
     overflow: hidden;
+
+    height: 23rem;
+
+    pointer-events: none;
+    user-select: none;
 
     img {
         width: 100%;
@@ -55,8 +67,10 @@
 
 .type {
     position: absolute;
-    top: 0.8rem;
-    left: 0.8rem;
+    top: 1.6rem;
+    left: 1rem;
+
+    font-size: 1.2rem !important;
 }
 
 .bottom {
@@ -69,7 +83,7 @@
     display: flex;
     justify-content: center;
     column-gap: 3rem;
-    padding: 1.4rem;
+    margin-top: 1rem;
 }
 
 .stat {
@@ -82,8 +96,8 @@
         align-items: center;
         justify-content: center;
 
-        background: rgb(217, 217, 217);
-        background: linear-gradient(150deg, rgba(217, 217, 217, 0.07) 30%, rgba(115, 115, 115, 0) 70%);
+        // background: rgb(217, 217, 217);
+        // background: linear-gradient(150deg, rgba(217, 217, 217, 0.07) 30%, rgba(115, 115, 115, 0) 70%);
 
         border-radius: 1rem;
 
@@ -113,32 +127,3 @@
     max-width: 21.2rem;
     margin: 0 auto;
 }
-
-// .button {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-
-//     line-height: 1;
-
-//     font-size: 1.4rem;
-
-//     border-top: 1px solid var(--spaceport-stat-stroke);
-//     background-color: var(--spaceport-stat-button-bg);
-
-//     padding: 1.6rem 0;
-//     cursor: pointer;
-
-//     color: var(--spaceport-stat-button-color);
-//     fill: var(--spaceport-stat-button-color);
-
-//     &__icon {
-//         margin-right: 1rem;
-//     }
-
-//     &.upgraded {
-//         color: var(--spaceport-stat-button-color-upgraded);
-//         fill: var(--spaceport-stat-button-color-upgraded);
-//     }
-// }

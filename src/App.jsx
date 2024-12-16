@@ -12,6 +12,7 @@ import { Play } from './pages/Play/Play'
 import { Missions } from './pages/Play/Missions/Missions'
 import { Selection } from './pages/Play/Selection/Selection'
 import { Confirm } from './pages/Play/Confirm/Confirm'
+import { Refferal } from './pages/Refferal/Refferal'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -34,6 +35,7 @@ function App() {
                         <Route path='selection' element={<Selection />} />
                         <Route path='confirm' element={<Confirm />} />
                     </Route>
+                    <Route path='refferal' element={<Refferal />} />
                     <Route path='*' element={<NotFound />} />
                 </Route>
 

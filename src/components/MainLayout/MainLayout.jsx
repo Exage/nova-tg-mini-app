@@ -6,6 +6,8 @@ import { Outlet } from 'react-router'
 import { Navigation } from './Navigation/Navigation'
 import { DailyRewards } from './DailyRewards/DailyRewards'
 
+import { UpgradeShip } from '@/modals/UpgradeShip/UpgradeShip'
+
 export const MainLayout = () => {
 
     const {
@@ -23,6 +25,8 @@ export const MainLayout = () => {
             <Navigation />
 
             <DailyRewards />
+
+            <UpgradeShip />
 
         </div>
     )
