@@ -1,6 +1,4 @@
 .navigation {
-    display: flex;
-
     max-width: 52rem;
     width: 100%;
 
@@ -9,6 +7,14 @@
 
     background-color: var(--nav-bg);
     border-top: 1px solid var(--nav-border);
+
+    &.ios {
+        padding-bottom: 2rem;
+    }
+}
+
+.links {
+    display: flex;
 }
 
 .link {

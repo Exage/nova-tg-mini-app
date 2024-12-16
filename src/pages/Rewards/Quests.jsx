@@ -53,7 +53,7 @@ export const Quests = () => {
             <div className="wrapper page__paddings-vertical">
                 
                 <h1 className='page__title'>
-                    Quests
+                    Quests 123
                 </h1>
 
                 <div className={items}>
