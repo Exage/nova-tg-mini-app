@@ -10,6 +10,7 @@ export const Modal = ({ modalId = '', children }) => {
     const { overlay, active, dialog, touchTrigger } = styles
 
     const touchTriggerRef = useRef(null)
+    const overlayRef = useRef(null)
     const { modals, dispatch, ACTIONS } = useModalsContext()
 
     const [isDragged, setIsDragged] = useState(false)
@@ -38,7 +39,12 @@ export const Modal = ({ modalId = '', children }) => {
     }
 
     const handleStartDrag = (e) => {
+        if (overlayRef.current && overlayRef.current.scrollTop !== 0) {
+            return
+        }
+
         if (e.touches && e.touches.length > 0) {
+
             setOverlayOverflow('hidden')
             setIsDragged(true)
 
@@ -88,6 +94,7 @@ export const Modal = ({ modalId = '', children }) => {
 
     return (
         <div
+            ref={overlayRef}
             className={classNames(overlay, { [active]: modals[modalId] })}
             data-modalid={modalId}
             onClick={handleClose}
