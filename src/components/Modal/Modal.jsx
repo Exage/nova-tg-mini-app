@@ -18,6 +18,7 @@ export const Modal = ({ modalId = '', children }) => {
     const [yDiff, setYDiff] = useState(0)
 
     const [dialogTransform, setDialogTransform] = useState(0)
+    const [overlayOverflow, setOverlayOverflow] = useState('hidden')
 
     const dialogStyles = {
         transform: modals[modalId] ? `translateY(${dialogTransform}px)` : `translateY(100%)`,
@@ -38,8 +39,9 @@ export const Modal = ({ modalId = '', children }) => {
 
     const handleStartDrag = (e) => {
         if (e.touches && e.touches.length > 0) {
+            setOverlayOverflow('hidden')
             setIsDragged(true)
-            
+
             const startY = e.touches[0].clientY
             setYStart(startY)
         }
@@ -49,7 +51,7 @@ export const Modal = ({ modalId = '', children }) => {
         if (isDragged && e.touches && e.touches.length > 0) {
             const currentY = e.touches[0].clientY
             const diff = currentY - yStart
-            
+
             setDialogTransform(diff >= 0 ? diff : 0)
         }
     }
@@ -67,18 +69,30 @@ export const Modal = ({ modalId = '', children }) => {
 
             if (diff <= 100) {
                 setDialogTransform(0)
+                setOverlayOverflow('auto')
             } else {
                 handleClose()
+                setOverlayOverflow('hidden')
             }
 
         }
     }
+
+    useEffect(() => {
+        if (modals[modalId]) {
+            setTimeout(() => setOverlayOverflow('auto'), 200)
+        } else {
+            setOverlayOverflow('hidden')
+        }
+    }, [modals[modalId]])
 
     return (
         <div
             className={classNames(overlay, { [active]: modals[modalId] })}
             data-modalid={modalId}
             onClick={handleClose}
+
+            style={{ overflow: overlayOverflow }}
 
             onTouchEnd={handleEndDrag}
             // onMouseUp={handleEndDrag}
@@ -90,16 +104,17 @@ export const Modal = ({ modalId = '', children }) => {
                 className={dialog}
                 onClick={handleStopPropagation}
 
+                onTouchStart={handleStartDrag}
                 style={dialogStyles}
             >
 
-                <div
+                {/* <div
                     ref={touchTriggerRef}
                     className={touchTrigger}
 
                     onTouchStart={handleStartDrag}
-                // onMouseDown={handleStartDrag}
-                ></div>
+                    onMouseDown={handleStartDrag}
+                ></div> */}
 
                 {children}
 

@@ -42,6 +42,7 @@
 
     background-color: var(--chose-spaceship-name-bg);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
     &__divider {
         width: 100%;

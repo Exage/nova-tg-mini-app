@@ -81,6 +81,10 @@ body {
 
     color: var(--white);
     background-color: var(--bg);
+
+    &.modal-opened {
+        overflow: hidden;
+    }
 }
 
 *,

@@ -4,18 +4,24 @@ export const ACTIONS = {
     OPEN_MODAL: 'OPEN_MODAL',
     CLOSE_MODAL: 'CLOSE_MODAL',
     SET_MODAL_DATA: 'SET_MODAL_DATA'
-} 
+}
 
 export const ModalsContext = createContext()
 
 export const modalsReducer = (state, action) => {
     switch (action.type) {
         case ACTIONS.OPEN_MODAL:
+            
+            document.body.classList.add('modal-opened')
+            
             return {
                 ...state,
                 modals: { ...state.modals, [action.payload]: true }
             }
         case ACTIONS.CLOSE_MODAL:
+
+            document.body.classList.remove('modal-opened')
+
             return {
                 ...state,
                 modals: { ...state.modals, [action.payload]: false },
