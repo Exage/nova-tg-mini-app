@@ -17,8 +17,8 @@ const links = [
         icon: profileIcon,
     },
     {
-        title: 'Friends',
-        to: '/friends',
+        title: 'Refferal',
+        to: '/refferal',
         icon: friendsIcon,
     },
     {
