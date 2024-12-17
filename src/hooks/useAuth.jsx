@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useUserContext } from './useUserContext'
 
-export const useSignup = () => {
+export const useAuth = () => {
 
     const [isLoading, setIsLoading] = useState(null)
     const [error, setError] = useState(null)
@@ -42,5 +42,5 @@ export const useSignup = () => {
     }
 
 
-    return { isLoading, error, auth}
+    return { isLoading, error, auth }
 }

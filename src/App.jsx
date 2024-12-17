@@ -42,9 +42,9 @@ function App() {
         <div className="App">
             <Routes>
 
-                <Route index element={user ? <Navigate to='/profile' /> : <Start setStarted={setStarted} />} />
+                <Route index element={true ? <Navigate to='/profile' /> : <Start setStarted={setStarted} />} />
 
-                <Route element={user ? <MainLayout /> : <Navigate to='/' />}>
+                <Route element={true ? <MainLayout /> : <Navigate to='/' />}>
 
                     <Route path='profile' element={<Profile />} />
                     <Route path='spaceport' element={<Spaceport />} />
