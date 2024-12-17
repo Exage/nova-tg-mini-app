@@ -5,7 +5,7 @@ export const useModalsContext = () => {
     const context = useContext(ModalsContext)
 
     if (!context) {
-        throw new Error('useModalsContext must must be used inside an ModalsContextProvider')
+        throw new Error('useModalsContext must must be used inside an UserContextProvider')
     }
 
     return context
