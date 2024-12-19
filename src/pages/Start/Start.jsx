@@ -8,12 +8,15 @@ import { Button } from '@/components/UI/Button/Button'
 import { Background } from './Background/Background'
 import { ReactSVG } from 'react-svg'
 
-export const Start = ({ setStarted }) => {
+import { useUserContext } from '@/hooks/useUserContext'
+
+export const Start = () => {
 
     const { start, wrapper, top, logo: logoClass, logoMain, logoBlur, bottom, text, btn } = styles
+    const { dispatch, ACTIONS } = useUserContext()
 
     const handleStartBtn = () => {
-        console.log('123')
+        dispatch({ type: ACTIONS.SET_USER, payload: {} })
     }
 
     return (

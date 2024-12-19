@@ -24,8 +24,6 @@ function App() {
     const { user } = useUserContext()
     const { tg } = useTelegram()
 
-    const [started, setStarted] = useState(true)
-
     useEffect(() => {
 
         tg.disableVerticalSwipes()
@@ -37,14 +35,14 @@ function App() {
         // })
 
     }, [])
-
+    
     return (
         <div className="App">
             <Routes>
 
-                <Route index element={true ? <Navigate to='/profile' /> : <Start setStarted={setStarted} />} />
+                <Route index element={user ? <Navigate to='/profile' /> : <Start />} />
 
-                <Route element={true ? <MainLayout /> : <Navigate to='/' />}>
+                <Route element={user ? <MainLayout /> : <Navigate to='/' />}>
 
                     <Route path='profile' element={<Profile />} />
                     <Route path='spaceport' element={<Spaceport />} />
