@@ -1,0 +1,119 @@
+.friend {
+    display: flex;
+    align-items: center;
+
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--refferal-friend-border);
+}
+
+.text {
+    margin-left: 1.5rem;
+    flex: 1;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 2rem;
+
+    word-break: normal
+}
+
+.subname {
+    display: flex;
+    align-items: center;
+    color: var(--text-sec);
+
+    font-size: 1.4rem;
+
+    column-gap: 0.5rem;
+}
+
+.avatar {
+    position: relative;
+
+    width: 4.9rem;
+    height: 5.4rem;
+
+    clip-path: polygon(50% 1%, 99% 25%, 99% 75%, 50% 99%, 1% 75%, 1% 25%);
+
+    overflow: hidden;
+
+    &-border {
+
+        display: inline-block;
+        position: relative;
+
+        z-index: 5;
+
+        &::before {
+
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 4.9rem;
+            height: 5.4rem;
+
+            background-image: url(@/assets/images/refferal/avatar-frame.svg);
+            background-position: center;
+
+            z-index: 10;
+        }
+
+        &::after {
+
+            content: "";
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 9.7rem;
+            height: 9.7rem;
+
+            transform: translate(-50%, -50%);
+
+            background-image: url(@/assets/images/refferal/looper.svg);
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.gems {
+    display: flex;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 2rem;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 3rem;
+        height: 4rem;
+
+        flex-shrink: 0;
+
+        vertical-align: top;
+
+        background-image: url(@/assets/images/gem-small.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        margin-left: 1rem;
+    }
+}
