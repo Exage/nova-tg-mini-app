@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import './App.scss'
 
@@ -34,8 +34,18 @@ function App() {
         //     if (window.scrollY > 0) window.scrollTo(0, 0)
         // })
 
+        const scrollWindow = () => {
+            setPosY(window.scrollY)
+        }
+
+        window.addEventListener('scroll', scrollWindow)
+
+        return () => {
+            window.removeEventListener('scroll', scrollWindow)
+        }
+
     }, [])
-    
+
     return (
         <div className="App">
             <Routes>
@@ -53,7 +63,7 @@ function App() {
                         <Route path='selection' element={<Selection />} />
                         <Route path='confirm' element={<Confirm />} />
                     </Route>
-                    
+
                     <Route path='refferal' element={<Refferal />} />
                     <Route path='*' element={<NotFound />} />
 

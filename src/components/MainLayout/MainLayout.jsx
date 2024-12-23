@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import classNames from 'classnames'
 import styles from './MainLayout.module.scss'
 
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
 
 import { Navigation } from './Navigation/Navigation'
 import { DailyRewards } from './DailyRewards/DailyRewards'
@@ -19,12 +19,22 @@ export const MainLayout = () => {
         ios
     } = styles
 
+    const overflowRef = useRef(null)
+
     const { platform } = useTelegram()
 
-    return (
-        <div className={classNames(mainLayout, { [ios]: platform === 'ios' } )}>
+    const { pathname } = useLocation()
 
-            <div className={overflow}>
+    useEffect(() => {
+        if (overflowRef.current) {
+            overflowRef.current.scrollTo(0, 0)
+        }
+    }, [pathname])
+
+    return (
+        <div className={classNames(mainLayout, { [ios]: platform === 'ios' })}>
+
+            <div ref={overflowRef} className={overflow}>
                 <Outlet />
             </div>
 

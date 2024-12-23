@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classNames from 'classnames'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import { ReactSVG } from 'react-svg'
 
 import styles from './Navigation.module.scss'
