@@ -9,8 +9,6 @@ import photo from '@/assets/images/profile/stat-starship.png'
 export const Profile = () => {
 
     const {
-        profile,
-        top,
         avatar,
         ['avatar-border']: avatarBorder,
         name,
@@ -32,8 +30,9 @@ export const Profile = () => {
 
     return (
         <div className="wrapper">
-            <div className={profile}>
-                <div className={top}>
+
+            <div className={'py-8'}>
+                <div className={'pt-12 flex flex-col items-center justify-center'}>
 
                     <div className={avatarBorder}>
                         <div className={avatar}>
@@ -41,16 +40,16 @@ export const Profile = () => {
                         </div>
                     </div>
 
-                    <h1 className={name}>
+                    <h1 className={'mt-[1.6rem] text-4xl font-bold uppercase'}>
                         MIKITAUIUX
                     </h1>
-                    <h2 className={username}>
+                    <h2 className={'text-base text-secondary-600 lowercase'}>
                         #mikitauiux
                     </h2>
 
                 </div>
 
-                <div className={stats}>
+                <div className={'grid grid-rows-2 grid-cols-2 gap-4'}>
                     <div className={block}>
                         <div className={blockContent}>
                             <div className={blockText}>
@@ -59,6 +58,21 @@ export const Profile = () => {
                                 </h2>
                                 <h3 className={blockPoints}>
                                     2000
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={classNames(block, 'row-span-2')}>
+                        <div className={blockContent}>
+                            <div className={blockPhoto}>
+                                <img src={photo} alt="" />
+                            </div>
+                            <div className={classNames(blockText, blockTextCenter)}>
+                                <h2 className={blockTitle}>
+                                    Favourite ship:
+                                </h2>
+                                <h3 className={blockSubtitle}>
+                                    Nebula Seeker
                                 </h3>
                             </div>
                         </div>
@@ -75,22 +89,7 @@ export const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={block}>
-                        <div className={blockContent}>
-                            <div className={blockPhoto}>
-                                <img src={photo} alt="" />
-                            </div>
-                            <div className={classNames(blockText, blockTextCenter)}>
-                                <h2 className={blockTitle}>
-                                    Favourite ship:
-                                </h2>
-                                <h3 className={blockSubtitle}>
-                                    Nebula Seeker
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={block}>
+                    <div className={classNames(block, 'col-span-2')}>
                         <div className={blockContent}>
                             <div className={blockText}>
                                 <h2 className={blockTitle}>
