@@ -11,13 +11,7 @@ export const Profile = () => {
     const {
         avatar,
         ['avatar-border']: avatarBorder,
-        name,
-        username,
-        stats,
         block,
-        ['block__content']: blockContent,
-        ['block__text']: blockText,
-        ['block__text-center']: blockTextCenter,
         ['block__title']: blockTitle,
         ['block__subtitle']: blockSubtitle,
         ['block__points']: blockPoints,
@@ -27,6 +21,10 @@ export const Profile = () => {
         ['ship__name']: shipName,
         ['ship__status']: shipStatus
     } = styles
+
+    const blockContent = 'flex flex-col relative p-4 h-full z-10'
+    const blockText = 'w-full m-auto'
+    const blockTextCenter = 'text-center'
 
     return (
         <div className="wrapper">
@@ -49,7 +47,7 @@ export const Profile = () => {
 
                 </div>
 
-                <div className={'grid grid-rows-2 grid-cols-2 gap-4'}>
+                <div className={'grid grid-rows-2 grid-cols-2 gap-x-[1.6rem] gap-y-[1.2rem] mt-8'}>
                     <div className={block}>
                         <div className={blockContent}>
                             <div className={blockText}>

@@ -88,22 +88,6 @@
     backdrop-filter: blur(8px);
     border-radius: 15px;
 
-    // &:nth-child(1) {
-    //     grid-area: block1;
-    // }
-
-    // &:nth-child(2) {
-    //     grid-area: block3;
-    // }
-
-    // &:nth-child(3) {
-    //     grid-area: block2;
-    // }
-
-    // &:nth-child(4) {
-    //     grid-area: block4;
-    // }
-
     &::before {
         content: '';
         position: absolute;
@@ -132,22 +116,6 @@
         height: 100%;
 
         z-index: 10;
-    }
-
-    &__text {
-        
-        margin: auto;
-        width: 100%;
-
-        &-center {
-            text-align: center;
-        }
-    }
-
-    &__title {
-        font-size: 1.6rem;
-        font-weight: 500;
-        color: var(--stat-block-title);
     }
 
     &__subtitle {
