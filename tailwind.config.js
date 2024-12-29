@@ -1,26 +1,42 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+
 export default {
-    content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
-    ],
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        extend: {},
+        extend: {
+            textShadow: {
+                DEFAULT: '0 4px 4px rgba(0, 0, 0, 1)',
+            },
+        },
         colors: {
+            white: '#FFFFFF',
+            black: '#000000',
             secondary: {
                 500: '#A1A0A0',
-                600: '#979797'
+                600: '#979797',
             },
             accent: {
-                500: '#7440A9',
-                400: '#A17FF1',
-                300: '#B364D8',
-                700: '#3E225A',
-                600: '#B255FF',
                 200: '#C4B1D8',
+                300: '#A17FF1',
+                400: '#B364D8',
+                500: '#B255FF',
+                600: '#7440A9',
+                700: '#5a3580',
+                800: '#3E225A',
             },
-        }
+        },
     },
-    plugins: [],
+    plugins: [
+        plugin(function ({ matchUtilities, theme }) {
+            matchUtilities(
+                {
+                    'text-shadow': (value) => ({
+                        textShadow: value,
+                    }),
+                },
+                { values: theme('textShadow') }
+            )
+        }),
+    ],
 }
-

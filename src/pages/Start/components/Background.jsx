@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from './Background.module.scss'
 import { Blurhash } from 'react-blurhash'
 
 import bg from '@/assets/images/start/bg.jpg'
@@ -8,8 +7,6 @@ const photoHash = 'L142F[OGE4iw?w%fD%My9u.8iu9G'
 
 export const Background = () => {
 
-    const { background, wrapper, hash, photo } = styles
-
     const [bgLoaded, setBgLoaded] = useState(false)
 
     const handleLoadPhoto = () => {
@@ -17,17 +14,17 @@ export const Background = () => {
     }
 
     return (
-        <div className={wrapper}>
-            <div className={background}>
+        <div className={'absolute top-0 left-0 w-full h-full overflow-hidden z-10'}>
+            <div className={'relative h-full'}>
                 <Blurhash
-                    className={hash}
+                    className={'absolute top-0 left-0 w-full h-full -z-10 transition-opacity duration-500 ease-in-out'}
                     hash={photoHash}
                     style={{ width: '100%', height: '100%', opacity: bgLoaded ? '0' : '1' }}
                 />
                 <img
                     src={bg}
                     alt="Background Photo"
-                    className={photo}
+                    className={'absolute top-0 left-0 w-full h-full object-cover pointer-events-none select-none -z-20'}
                     style={{ display: bgLoaded ? 'block' : 'none' }}
                     onLoad={handleLoadPhoto}
                 />
