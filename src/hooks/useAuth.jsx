@@ -6,7 +6,7 @@ export const useAuth = () => {
     const [loading, setLoading] = useState(null)
     const [error, setError] = useState(null)
 
-    const { ACTIONS } = useUserContext()
+    const { ACTIONS, dispatch } = useUserContext()
 
     const auth = async (data) => {
 
@@ -24,15 +24,15 @@ export const useAuth = () => {
             })
             const json = await response.json()
 
-            if (!response.ok) {
-                setError(json.message)
-            }
+            // if (!response.ok) {
+            //     setError(json.message)
+            // }
 
-            if (response.ok) {
-                dispatch({ type: ACTIONS.SET_USER, payload: json.data })
+            // if (response.ok) {
+            //     dispatch({ type: ACTIONS.SET_USER, payload: json.data })
 
-                return json
-            }
+            //     return json
+            // }
 
         } catch (error) {
             setError(error.message)
