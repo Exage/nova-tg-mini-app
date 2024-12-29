@@ -29,22 +29,8 @@ function App() {
         tg.disableVerticalSwipes()
         tg.lockOrientation()
         tg.expand()
-
-        // window.addEventListener('scroll', () => {
-        //     if (window.scrollY > 0) window.scrollTo(0, 0)
-        // })
-
-        const scrollWindow = () => {
-            setPosY(window.scrollY)
-        }
-
-        window.addEventListener('scroll', scrollWindow)
-
-        return () => {
-            window.removeEventListener('scroll', scrollWindow)
-        }
-
-    }, [])
+        
+    }, [tg])
 
     return (
         <div className="App">
