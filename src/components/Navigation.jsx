@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
-import classNames from 'classnames'
-import { NavLink, useLocation } from 'react-router'
+import React from 'react'
+import { NavLink } from 'react-router'
 import { ReactSVG } from 'react-svg'
-
-import styles from './Navigation.module.scss'
 
 import profileIcon from '@/assets/images/navigation/profile.svg'
 import friendsIcon from '@/assets/images/navigation/friends.svg'
@@ -43,24 +40,24 @@ const linksList = [
 
 export const Navigation = () => {
 
-    const { navigation, links, link, active, icon, title, ios } = styles
-
     const { platform } = useTelegram()
 
+    const linkClasses = 'flex flex-col items-center justify-center flex-1 relative h-20 z-10'
+
     return (
-        <div className={classNames(navigation, { [ios]: platform === 'ios' })}>
-            <div className={links}>
+        <div className={`max-w-screen-width w-full fixed bottom-0 bg-navBg border-t border-white/10 ${platform === "ios" ? 'pb-5' : 'pb-0'}`}>
+            <div className={'flex'}>
                 {linksList.map((item, index) => (
                     <NavLink
                         key={index}
                         to={item.to}
-                        className={({ isActive }) => isActive ? `${link} ${active}` : link}
+                        className={({ isActive }) => isActive ? `${linkClasses} text-accent-400 after:w-5 after:h-px after:bg-accent-400 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2` : `${linkClasses} text-white`}
                     >
                         <ReactSVG
-                            className={icon}
+                            className={'w-5 h-5 *:w-5 *:h-5 *:flex *:items-center'}
                             src={item.icon}
                         />
-                        <h3 className={title}>
+                        <h3 className={'font-medium text-xs font-serif mt-1'}>
                             {item.title}
                         </h3>
                     </NavLink>

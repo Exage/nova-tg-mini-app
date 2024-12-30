@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import './App.scss'
 
-import { MainLayout } from './components/MainLayout/MainLayout'
+import { MainLayout } from './layouts/MainLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'

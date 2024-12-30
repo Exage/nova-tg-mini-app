@@ -4,77 +4,83 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --screen-width: 520px;
+    }
+}
+
 :root {
-    --bg: #0D0712;
+    --bg: #0d0712;
     --start-bg: #000000;
     --white: #ffffff;
     --white-rgb: 255, 255, 255;
 
-    --text-sec: #A1A0A0;
+    --text-sec: #a1a0a0;
 
-    --btn: #7440A9;
-    --btn-disabled: #40235E;
+    --btn: #7440a9;
+    --btn-disabled: #40235e;
 
-    --active-link: #B364D8;
+    --active-link: #b364d8;
 
-    --nav-bg: #0D0813;
+    --nav-bg: #0d0813;
     --nav-border: rgba(255, 255, 255, 0.1);
 
     --gray: #979797;
 
     --stat-block-bg: rgba(13, 7, 18, 0.2);
-    --stat-block-title: #C4B1D8;
-    --stat-block-score: #B255FF;
-    --stat-block-ship-name: #B255FF;
-    --stat-block-ship-status: #C4B1D8;
+    --stat-block-title: #c4b1d8;
+    --stat-block-score: #b255ff;
+    --stat-block-ship-name: #b255ff;
+    --stat-block-ship-status: #c4b1d8;
 
     --spaceport-card-bg: #151517;
-    --spaceport-card-stroke: #A17FF1;
-    --spaceport-card-level: #B364D8;
-    --spaceport-stat-stroke: #30303E;
-    --spaceport-stat-button-bg: #2A282D;
-    --spaceport-stat-button-color: #B255FF;
-    --spaceport-stat-button-color-upgraded: #83D987;
-    --spaceport-pagination-inactive: #39393A;
-    --spaceport-pagination-active: #B364D8;
+    --spaceport-card-stroke: #a17ff1;
+    --spaceport-card-level: #b364d8;
+    --spaceport-stat-stroke: #30303e;
+    --spaceport-stat-button-bg: #2a282d;
+    --spaceport-stat-button-color: #b255ff;
+    --spaceport-stat-button-color-upgraded: #83d987;
+    --spaceport-pagination-inactive: #39393a;
+    --spaceport-pagination-active: #b364d8;
 
-    --ship-type-color-common: #1FDBFA;
-    --ship-type-color-epic: #B255FF;
-    --ship-type-color-rare: #B8860B;
-    --ship-type-color-legendary: #DAA520;
-    --ship-type-color-premium: #D1B104;
+    --ship-type-color-common: #1fdbfa;
+    --ship-type-color-epic: #b255ff;
+    --ship-type-color-rare: #b8860b;
+    --ship-type-color-legendary: #daa520;
+    --ship-type-color-premium: #d1b104;
 
     --overlay: rgba(15, 9, 22, 0.76);
 
     --reward-bg: #151517;
-    --reward-cart-stroke: #30303E;
-    --reward-cart-stroke-earned: #B255FF;
+    --reward-cart-stroke: #30303e;
+    --reward-cart-stroke-earned: #b255ff;
 
-    --quest-item-icon-stroke: #543C6B;
-    --quest-item-bg: #3E225A;
-    --quest-item-stroke: #A17FF1;
+    --quest-item-icon-stroke: #543c6b;
+    --quest-item-bg: #3e225a;
+    --quest-item-stroke: #a17ff1;
 
-    --mission-card-stroke: #A17FF1;
-    --mission-card-bg: #3E225A;
+    --mission-card-stroke: #a17ff1;
+    --mission-card-bg: #3e225a;
 
     --chose-spaceship-name-bg: rgba(13, 7, 18, 0.2);
     --chose-spaceship-block-bg: rgba(13, 7, 18, 0.2);
-    --chose-spaceship-coming-soon: #908E92;
+    --chose-spaceship-coming-soon: #908e92;
     --chose-spaceship-block-empty-over-bg: rgba(178, 85, 255, 0.2);
 
-    --ticket-bg: #20132E;
-    --ticket-top: #7A6392;
-    --ticket-primary: #E6E5E6;
-    --ticket-secondary: #C4B1D8;
+    --ticket-bg: #20132e;
+    --ticket-top: #7a6392;
+    --ticket-primary: #e6e5e6;
+    --ticket-secondary: #c4b1d8;
     --ticket-divider: #655495;
-    --ticket-line-bg: #D3C1E6;
-    --ticket-line-stroke: #9883AE;
+    --ticket-line-bg: #d3c1e6;
+    --ticket-line-stroke: #9883ae;
 
-    --upgrade-ship-progress: #30303E;
-    --upgrade-ship-progress-bar: #B255FF;
+    --upgrade-ship-progress: #30303e;
+    --upgrade-ship-progress-bar: #b255ff;
 
-    --counter-border: #A17FF1;
-    --counter-bg: #3E225A;
+    --counter-border: #a17ff1;
+    --counter-bg: #3e225a;
 
     --refferal-friend-border: #515151;
 }
@@ -99,8 +105,7 @@ html {
 }
 
 body {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
+    // font-family: 'Space Grotesk', sans-serif;
 
     margin: 0;
     padding: 0;
@@ -200,11 +205,10 @@ button {
 }
 
 @mixin boxShadowShipType($color) {
-    box-shadow: 0px 0px 2.8px $color
+    box-shadow: 0px 0px 2.8px $color;
 }
 
 .ship-type {
-
     font-size: 1rem;
 
     padding: 0.4em 0.6em;

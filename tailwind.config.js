@@ -8,10 +8,18 @@ export default {
             textShadow: {
                 DEFAULT: '0 4px 4px rgba(0, 0, 0, 1)',
             },
+            spacing: {
+                'screen-width': 'var(--screen-width)'
+            },
+            fontFamily: {
+                sans: ['"Space Grotesk"', 'sans-serif'],
+                serif: ['"Rubik"', 'sans-serif']
+            }
         },
         colors: {
             white: '#FFFFFF',
             black: '#000000',
+            navBg: '#0D0813',
             secondary: {
                 500: '#A1A0A0',
                 600: '#979797',

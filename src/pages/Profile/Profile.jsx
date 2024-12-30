@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import stylesCore from '@/Core.module.scss'
 import styles from './Profile.module.scss'
 
 import avatarPh from '@/assets/images/profile/avatar-ph.png'
@@ -27,15 +27,19 @@ export const Profile = () => {
     const blockTextCenter = 'text-center'
 
     return (
-        <div className="wrapper">
+        <div className={stylesCore.wrapper}>
 
             <div className={'py-8'}>
                 <div className={'pt-12 flex flex-col items-center justify-center'}>
 
-                    <div className={avatarBorder}>
+                    {/* <div className={avatarBorder}>
                         <div className={avatar}>
                             <img src={avatarPh} alt="" />
                         </div>
+                    </div> */}
+
+                    <div className={'w-[6.375rem] h-[7.25rem]'}>
+                        <img src={avatarPh} alt="" />
                     </div>
 
                     <h1 className={'mt-[1.6rem] text-4xl font-bold uppercase'}>
@@ -47,7 +51,7 @@ export const Profile = () => {
 
                 </div>
 
-                <div className={'grid grid-rows-2 grid-cols-2 gap-x-[1.6rem] gap-y-[1.2rem] mt-8'}>
+                {/* <div className={'grid grid-rows-2 grid-cols-2 gap-x-[1.6rem] gap-y-[1.2rem] mt-8'}>
                     <div className={block}>
                         <div className={blockContent}>
                             <div className={blockText}>
@@ -114,7 +118,7 @@ export const Profile = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </div>
