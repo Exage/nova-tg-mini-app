@@ -15,7 +15,7 @@ export const Start = () => {
     const { dispatch, ACTIONS } = useUserContext()
 
     const handleStartBtn = () => {
-        // dispatch({ type: ACTIONS.SET_USER, payload: {} })
+        dispatch({ type: ACTIONS.SET_USER, payload: {} })
     }
 
     return (
