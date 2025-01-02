@@ -3,8 +3,7 @@
 }
 
 .btnGradient {
-    @apply 
-        before:absolute 
+    @apply before:absolute 
         before:inset-0 
         before:z-[-1] 
         before:bg-gradient-to-r 
@@ -12,9 +11,31 @@
         before:from-accent-700 
         before:via-accent-600 
         before:via-30% 
-        before:to-accent-700
+        before:to-accent-700;
 }
 
 .wrapper {
     @apply px-5;
+}
+
+.userAvatarFrame {
+    mask-image: url(/avatar-frame-mask.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.userAvatarLooper {
+    @apply 
+        before:absolute 
+        before:top-1/2 
+        before:left-1/2 
+        before:-translate-x-1/2 
+        before:-translate-y-1/2 
+        before:bg-[url('/looper.svg')] 
+        before:bg-cover 
+        before:bg-no-repeat 
+        before:w-[127%] 
+        before:h-[127%]
+        before:-z-[1];
 }

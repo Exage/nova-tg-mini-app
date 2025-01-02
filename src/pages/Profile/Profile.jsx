@@ -2,12 +2,9 @@ import React from 'react'
 import stylesCore from '@/Core.module.scss'
 import styles from './Profile.module.scss'
 
-import avatarPh from '@/assets/images/profile/avatar-ph.png'
-
-import photo from '@/assets/images/profile/stat-starship.png'
+import { UserAvatar } from '@/components/UserAvatar'
 
 export const Profile = () => {
-
     const {
         avatar,
         ['avatar-border']: avatarBorder,
@@ -19,7 +16,7 @@ export const Profile = () => {
         ['block__list']: blockList,
         ['block__list-item']: blockListItem,
         ['ship__name']: shipName,
-        ['ship__status']: shipStatus
+        ['ship__status']: shipStatus,
     } = styles
 
     const blockContent = 'flex flex-col relative p-4 h-full z-10'
@@ -28,27 +25,14 @@ export const Profile = () => {
 
     return (
         <div className={stylesCore.wrapper}>
-
             <div className={'py-8'}>
                 <div className={'pt-12 flex flex-col items-center justify-center'}>
 
-                    {/* <div className={avatarBorder}>
-                        <div className={avatar}>
-                            <img src={avatarPh} alt="" />
-                        </div>
-                    </div> */}
+                    <UserAvatar size={'w-32 h-32'} />
 
-                    <div className={'w-[6.375rem] h-[7.25rem]'}>
-                        <img src={avatarPh} alt="" />
-                    </div>
-
-                    <h1 className={'mt-[1.6rem] text-4xl font-bold uppercase'}>
-                        MIKITAUIUX
-                    </h1>
-                    <h2 className={'text-base text-secondary-600 lowercase'}>
-                        #mikitauiux
-                    </h2>
-
+                    <h2 className={'mt-4 text-4xl font-bold uppercase'}>MIKITAUIUX</h2>
+                    <h3 className={'text-base text-secondary-600 lowercase'}>#mikitauiux</h3>
+                    
                 </div>
 
                 {/* <div className={'grid grid-rows-2 grid-cols-2 gap-x-[1.6rem] gap-y-[1.2rem] mt-8'}>
@@ -119,7 +103,6 @@ export const Profile = () => {
                         </div>
                     </div>
                 </div> */}
-
             </div>
         </div>
     )
