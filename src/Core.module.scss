@@ -1,9 +1,17 @@
 .startTopGradient {
-    @apply before:absolute before:top-0 before:left-0 before:w-full before:h-[6.56rem] before:bg-gradient-to-b before:from-black before:z-20;
+    @apply 
+        before:absolute 
+        before:top-0 
+        before:left-0 
+        before:w-full 
+        before:h-[6.56rem] 
+        before:bg-gradient-to-b 
+        before:from-black before:z-20;
 }
 
 .btnGradient {
-    @apply before:absolute 
+    @apply 
+        before:absolute 
         before:inset-0 
         before:z-[-1] 
         before:bg-gradient-to-r 
@@ -38,4 +46,31 @@
         before:w-[127%] 
         before:h-[127%]
         before:-z-[1];
+}
+
+.gradietBlockStroke {
+    @apply 
+        relative 
+        bg-blockGradientBg/20
+        p-[0.125rem]
+        rounded-lg
+        backdrop:blur-sm
+        before:inset-0 
+        before:p-[0.125rem]
+        before:absolute
+        before:rounded-[inherit];
+
+    &::before {
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: destination-out;
+
+        background: rgb(48, 37, 77);
+        background: linear-gradient(
+            166deg,
+            rgba(48, 37, 77, 1) 0%,
+            rgba(48, 37, 77, 0.32) 35%,
+            rgba(48, 37, 77, 0.39) 58%,
+            rgba(48, 37, 77, 1) 100%
+        );
+    }
 }

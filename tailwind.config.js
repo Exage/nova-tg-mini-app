@@ -20,6 +20,7 @@ export default {
             white: '#FFFFFF',
             black: '#000000',
             navBg: '#0D0813',
+            blockGradientBg: '#0D0712',
             secondary: {
                 500: '#A1A0A0',
                 600: '#979797',
