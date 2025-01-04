@@ -7,11 +7,11 @@ import './Button.scss'
 export const Button = ({ disabled = false, className = '', children, ...props }) => {
     return (
         <button
-            className={`w-full relative p-[2px] inline-block rounded-md overflow-hidden ${styles.btnGradient} ${className}`}
+            className={classNames('w-full relative p-[2px] inline-block rounded-md overflow-hidden disabled:*:bg-accent-700', styles.btnGradient, className)}
             disabled={disabled}
             {...props}
         >
-            <span className={'block w-full relative bg-accent-600 text-xl p-2 rounded-md'}>
+            <span className={classNames('block w-full relative text-xl p-2 rounded-md', disabled ? 'bg-accent-800' : 'bg-accent-600')}>
                 {children}
             </span>
         </button>

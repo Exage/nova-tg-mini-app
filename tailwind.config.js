@@ -19,6 +19,11 @@ export default {
         colors: {
             white: '#FFFFFF',
             black: '#000000',
+            gray: {
+                200: '#BDBDBD',
+                400: '#A1A0A0',
+                600: '#515151',
+            },
             navBg: '#0D0813',
             blockGradientBg: '#0D0712',
             secondary: {

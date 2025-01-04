@@ -74,3 +74,16 @@
         );
     }
 }
+
+.gemAfter {
+    @apply
+        after:inline-block 
+        after:bg-[url("/gem.svg")] 
+        after:bg-contain 
+        after:bg-no-repeat 
+        after:bg-center;
+}
+
+.pageTitle {
+    @apply font-bold text-4xl text-white;
+}
