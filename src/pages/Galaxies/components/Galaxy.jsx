@@ -8,7 +8,7 @@ import { Type } from '@/components/Type'
 
 export const Galaxy = ({ data }) => {
     return (
-        <Link to={'/play/missions'} state={{ mission: data }}>
+        <Link to={'/play/missions'} state={{ galaxy: data }}>
             <Block className={'relative pt-6 pb-2.5 px-2'}>
 
                 <div className={'w-full absolute top-0 left-0 flex justify-center'}>

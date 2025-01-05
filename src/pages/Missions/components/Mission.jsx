@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 
 import styles from '@/Core.module.scss'
 import classNames from 'classnames'
@@ -6,8 +6,12 @@ import classNames from 'classnames'
 import { Block } from '@/components/UI/Block'
 
 export const Mission = ({ data }) => {
+    
+    const location = useLocation()
+    const locationData = location.state
+
     return (
-        <Link>
+        <Link to={'/play/selection'} state={{ ...locationData, mission: data }}>
             <Block className={'relative pt-6 pb-2.5 px-2'}>
 
                 <div className={'w-full absolute top-0 left-0 flex justify-center'}>

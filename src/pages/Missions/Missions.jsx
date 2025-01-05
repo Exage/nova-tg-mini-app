@@ -83,19 +83,19 @@ const missionsList = {
 
 export const Missions = () => {
     const location = useLocation()
-    const data = location.state
+    const locationData = location.state
 
-    if (!data?.mission) {
+    if (!locationData?.galaxy) {
         return <Navigate to={'/play/galaxies'} />
     }
 
     return (
         <MainWrapper>
-            <PageTitle>{data.mission.title}</PageTitle>
+            <PageTitle>{locationData.galaxy.title}</PageTitle>
 
-            {missionsList[data.mission.id] && (
+            {missionsList[locationData.galaxy.id] && (
                 <div className={'grid grid-cols-2 gap-2.5 mt-3'}>
-                    {missionsList[data.mission.id].map((item) => (
+                    {missionsList[locationData.galaxy.id].map((item) => (
                         <Mission key={item.id} data={item} />
                     ))}
                 </div>

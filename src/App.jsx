@@ -10,8 +10,8 @@ import { Spaceport } from './pages/Spaceport/Spaceport'
 import { Quests } from './pages/Rewards/Quests'
 import { Galaxies } from './pages/Galaxies/Galaxies'
 import { Missions } from './pages/Missions/Missions'
-import { Selection } from './pages/Play/Selection/Selection'
-import { Confirm } from './pages/Play/Confirm/Confirm'
+import { Selection } from './pages/Selection/Selection'
+import { Ticket } from './pages/Ticket/Ticket'
 import { Refferal } from './pages/Refferal/Refferal'
 
 import { NotFound } from './pages/NotFound/NotFound'
@@ -49,7 +49,7 @@ function App() {
                         <Route path='galaxies' element={<Galaxies />} />
                         <Route path='missions' element={<Missions />} />
                         <Route path='selection' element={<Selection />} />
-                        <Route path='confirm' element={<Confirm />} />
+                        <Route path='ticket' element={<Ticket />} />
                     </Route>
 
                     <Route path='refferal' element={<Refferal />} />
