@@ -1,11 +1,9 @@
-import styles from '@/Core.module.scss'
+import classNames from 'classnames'
 
 export const MainWrapper = ({ py = 'py-8', children }) => {
     return (
-        <div className={styles.wrapper}>
-            <div className={py}>
-                {children}
-            </div>
+        <div className={classNames('px-5', py)}>
+            {children}
         </div>
     )
 }

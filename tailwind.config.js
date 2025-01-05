@@ -39,6 +39,13 @@ export default {
                 700: '#5a3580',
                 800: '#3E225A',
             },
+            type: {
+                common: '#1fdbfa',
+                epic: '#b255ff',
+                rare: '#b8860b',
+                legendary: '#daa520',
+                premium: '#d1b104'
+            }
         },
     },
     plugins: [

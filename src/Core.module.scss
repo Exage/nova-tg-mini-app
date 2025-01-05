@@ -84,6 +84,15 @@
         after:bg-center;
 }
 
+.gemBefore {
+    @apply
+        before:inline-block 
+        before:bg-[url("/gem.svg")] 
+        before:bg-contain 
+        before:bg-no-repeat 
+        before:bg-center;
+}
+
 .pageTitle {
     @apply font-bold text-4xl text-white;
 }
