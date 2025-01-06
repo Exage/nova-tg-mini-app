@@ -4,6 +4,7 @@ import styles from '@/Core.module.scss'
 import classNames from 'classnames'
 
 import { Block } from '@/components/UI/Block'
+import { Type } from '@/components/Type'
 
 export const Mission = ({ data }) => {
     
@@ -21,7 +22,10 @@ export const Mission = ({ data }) => {
                 </div>
 
                 <div className={'w-full max-w-[8.75rem] mx-auto'}>
-                    <div className={'w-full rounded-lg overflow-hidden'}>
+                    <div className={'relative w-full h-[4.68rem] bg-accent-900 rounded-lg overflow-hidden'}>
+
+                        <Type type={data.type} className={'absolute top-2 left-2'} />
+
                         <img className={'w-full object-cover'} src={data.cover} alt="" />
                     </div>
 

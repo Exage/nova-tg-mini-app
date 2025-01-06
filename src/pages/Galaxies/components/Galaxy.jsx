@@ -18,7 +18,7 @@ export const Galaxy = ({ data }) => {
                 </div>
 
                 <div className={'w-full max-w-[8.75rem] mx-auto'}>
-                    <div className={'relative w-full rounded-lg overflow-hidden'}>
+                    <div className={'relative w-full h-[4.68rem] bg-accent-900 rounded-lg overflow-hidden'}>
                         
                         <Type type={data.type} className={'absolute top-2 left-2'} />
                         
