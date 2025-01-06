@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import './App.scss'
 
 import { MainLayout } from './layouts/MainLayout'
+import { SpaceportLayout } from './layouts/SpaceportLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
@@ -13,6 +14,7 @@ import { Missions } from './pages/Missions/Missions'
 import { Selection } from './pages/Selection/Selection'
 import { Ticket } from './pages/Ticket/Ticket'
 import { Refferal } from './pages/Refferal/Refferal'
+import { RentStarship } from './pages/RentStarship/RentStarship'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -41,7 +43,6 @@ function App() {
                 <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
 
                     <Route path='profile' element={<Profile />} />
-                    <Route path='spaceport' element={<Spaceport />} />
                     <Route path='quests' element={<Quests />} />
 
                     <Route path='play'>
@@ -50,6 +51,11 @@ function App() {
                         <Route path='missions' element={<Missions />} />
                         <Route path='selection' element={<Selection />} />
                         <Route path='ticket' element={<Ticket />} />
+                    </Route>
+
+                    <Route path='spaceport' element={<SpaceportLayout />}>
+                        <Route index element={<Spaceport />} />
+                        <Route path='rent' element={<RentStarship />} />
                     </Route>
 
                     <Route path='refferal' element={<Refferal />} />

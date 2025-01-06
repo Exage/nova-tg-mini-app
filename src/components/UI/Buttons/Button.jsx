@@ -1,8 +1,5 @@
-import React from 'react'
 import styles from '@/Core.module.scss'
 import classNames from 'classnames'
-
-import './Button.scss'
 
 export const Button = ({ disabled = false, className = '', children, ...props }) => {
     return (

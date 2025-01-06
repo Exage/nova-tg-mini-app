@@ -10,16 +10,16 @@
 }
 
 .btnGradient {
-    @apply 
-        before:absolute 
-        before:inset-0 
-        before:z-[-1] 
-        before:bg-gradient-to-r 
-        before:p-[1px] 
-        before:from-accent-700 
-        before:via-accent-600 
-        before:via-30% 
-        before:to-accent-700;
+    // @apply 
+    //     before:absolute 
+    //     before:inset-0 
+    //     before:z-[-1] 
+    //     before:bg-gradient-to-r 
+    //     before:p-[1px] 
+    //     before:from-accent-700 
+    //     before:via-accent-600 
+    //     before:via-30% 
+    //     before:to-accent-700;
 }
 
 .wrapper {
@@ -95,4 +95,8 @@
 
 .pageTitle {
     @apply font-bold text-4xl text-white;
+}
+
+.iconStroke {
+    @apply border border-white/10 rounded-md p-1;
 }

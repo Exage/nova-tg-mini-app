@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router'
 import { MainWrapper } from '@/components/MainWrapper'
 import { PassImage } from './components/PassImage'
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 
 export const Ticket = () => {
 

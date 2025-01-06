@@ -169,75 +169,21 @@ ol {
     padding-inline: 0;
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    outline: none;
-    border: none;
-    background: none;
-    color: inherit;
-    line-height: 1;
-}
+.spaceport-pagintaion {
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+    --swiper-pagination-bullet-border-radius: 3px;
+    --swiper-pagination-color: inherit;
+    --swiper-pagination-bullet-inactive-color: inherit;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 3px;
 
-.page__title {
-    font-size: 3.2rem;
-    font-weight: 500;
-    color: var(--white);
-}
-
-.page__subtitle {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--text-sec);
-}
-
-.page__paddings-vertical {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-}
-
-.wrapper {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-@mixin boxShadowShipType($color) {
-    box-shadow: 0px 0px 2.8px $color;
-}
-
-.ship-type {
-    font-size: 1rem;
-
-    padding: 0.4em 0.6em;
-    border-radius: 0.2rem;
-
-    text-transform: capitalize;
-
-    &__common {
-        background-color: var(--ship-type-color-common);
-        @include boxShadowShipType(var(--ship-type-color-common));
+    .swiper-pagination-bullet {
+        @apply bg-gray-700 transition-all duration-300;
     }
 
-    &__epic {
-        background-color: var(--ship-type-color-epic);
-        @include boxShadowShipType(var(--ship-type-color-epic));
-    }
-
-    &__rare {
-        background-color: var(--ship-type-color-rare);
-        @include boxShadowShipType(var(--ship-type-color-rare));
-    }
-
-    &__legendary {
-        background-color: var(--ship-type-color-legendary);
-        @include boxShadowShipType(var(--ship-type-color-legendary));
-    }
-
-    &__premium {
-        background-color: var(--ship-type-color-premium);
-        @include boxShadowShipType(var(--ship-type-color-premium));
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        --swiper-pagination-bullet-width: 35px;
+        @apply bg-accent-500;
     }
 }

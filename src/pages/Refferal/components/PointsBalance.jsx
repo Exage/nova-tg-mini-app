@@ -2,7 +2,7 @@ import styles from '@/Core.module.scss'
 import classNames from "classnames"
 
 import { Block } from "@/components/UI/Block"
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 
 export const PointsBalance = () => {
     return (

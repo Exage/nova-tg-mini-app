@@ -3,7 +3,7 @@ import styles from '@/Core.module.scss'
 
 import logo from '@/assets/images/logo.svg'
 
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 import { Background } from './components/Background'
 
 import { useUserContext } from '@/hooks/useUserContext'

@@ -5,7 +5,7 @@ import { Spaceships } from './components/Spaceships'
 import { Navigate, useLocation, useNavigate } from 'react-router'
 import { MainWrapper } from '@/components/MainWrapper'
 import { PageTitle } from '@/components/PageTitle'
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 
 export const Selection = () => {
 

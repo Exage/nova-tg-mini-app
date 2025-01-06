@@ -5,7 +5,7 @@ import styles from './DailyRewards.module.scss'
 import { Top } from './Top/Top'
 import { Cards } from './Cards/Cards'
 import { Total } from './Total/Total'
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 
 export const DailyRewards = () => {
 

@@ -8,7 +8,7 @@ import { useModalsContext } from '@/hooks/useModalsContext'
 
 import stat2 from '@/assets/images/spaceport/stat_2.svg'
 import stat3 from '@/assets/images/spaceport/stat_3.svg'
-import { Button } from '@/components/UI/Button/Button'
+import { Button } from '@/components/UI/Buttons/Button'
 
 export const UpgradeShip = () => {
     const {

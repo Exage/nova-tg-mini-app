@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['"Space Grotesk"', 'sans-serif'],
                 serif: ['"Rubik"', 'sans-serif']
+            },
+            screens: {
+                'spaceport': '364px'
             }
         },
         colors: {
@@ -24,12 +27,16 @@ export default {
                 400: '#A1A0A0',
                 500: '#908e92',
                 600: '#515151',
+                700: '#30303E',
             },
             navBg: '#0D0813',
             blockGradientBg: '#0D0712',
             secondary: {
                 500: '#A1A0A0',
                 600: '#979797',
+            },
+            blue: {
+                500: '#007AFF'
             },
             accent: {
                 200: '#C4B1D8',

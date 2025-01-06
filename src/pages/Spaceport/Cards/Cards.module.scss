@@ -11,30 +11,6 @@
     }
 }
 
-.pagintaion {
-    display: flex;
-    justify-content: center;
-    column-gap: 0.6rem;
-
-    margin-top: 1rem;
-
-    --swiper-pagination-bullet-width: 0.5rem;
-    --swiper-pagination-bullet-height: 0.5rem;
-    --swiper-pagination-bullet-border-radius: 0.25rem;
-    --swiper-pagination-color: var(--spaceport-pagination-active);
-    --swiper-pagination-bullet-inactive-color: var(--spaceport-pagination-inactive);
-    --swiper-pagination-bullet-inactive-opacity: 1;
-    --swiper-pagination-bullet-horizontal-gap: 0;
-
-    :global(.swiper-pagination-bullet) {
-        transition: width .3s ease;
-    }
-
-    :global(.swiper-pagination-bullet.swiper-pagination-bullet-active) {
-        --swiper-pagination-bullet-width: 3.5rem;
-    }
-}
-
 .button {
     &__wrapper {
         margin-top: 2.2rem;

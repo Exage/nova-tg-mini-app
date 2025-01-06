@@ -1,0 +1,38 @@
+import styles from '@/Core.module.scss'
+
+export const Spaceship = ({ data }) => {
+    return (
+        <div className={'relative max-w-[21.875rem] w-full h-[21.875rem] overflow-hidden bg-accent-900 border border-accent-300 mx-auto rounded-xl'}>
+
+            <div className={'w-full h-full pb-28'}>
+                <img className={'w-full h-full object-cover'} src={data.photo} alt="" />
+            </div>
+
+            <div className={'absolute left-0 bottom-0 w-full min-h-24 p-2.5 bg-accent-900/50 backdrop-blur-xl rounded-b-xl'}>
+                
+                <h3 className={'text-2xl font-bold text-center'}>{data.name}</h3>
+                <h4 className={'text-xl font-bold text-center text-accent-400'}>{data.level} lvl</h4>
+
+                <div className={'flex justify-center gap-12 mt-2'}>
+                    
+                    <div className={'text-center font-serif font-bold text-xl'}>
+                        <div className={styles.iconStroke}>
+                            <img src="/cargo_capacity.svg" alt="" />
+                        </div>
+                        <p className={'font-serif font-bold text-xl'}>3</p>
+                    </div>
+
+                    <div className={'text-center'}>
+                        <div className={styles.iconStroke}>
+                            <img src="/mining_speed.svg" alt="" />
+                        </div>
+                        <p className={'font-serif font-bold text-xl'}>20</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    )
+}
