@@ -46,9 +46,9 @@ export const Spaceport = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
     const handleOpenUpgrade = () => {
-        // dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'upgradeShip' })
-        // dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
-        console.log('123')
+        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'upgradeShip' })
+        dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
+        // console.log('123')
     }
 
     return (

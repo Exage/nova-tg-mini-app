@@ -45,7 +45,7 @@ export const Navigation = () => {
     const linkClasses = 'flex flex-col items-center justify-center flex-1 relative h-20 z-10'
 
     return (
-        <div className={`max-w-screen-width w-full fixed bottom-0 bg-navBg border-t border-white/10 ${platform === "ios" ? 'pb-5' : 'pb-0'}`}>
+        <div className={`max-w-app-width w-full fixed bottom-0 bg-navBg border-t border-white/10 ${platform === "ios" ? 'pb-5' : 'pb-0'}`}>
             <div className={'flex'}>
                 {linksList.map((item, index) => (
                     <NavLink

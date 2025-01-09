@@ -9,7 +9,7 @@ export default {
                 DEFAULT: '0 4px 4px rgba(0, 0, 0, 1)',
             },
             spacing: {
-                'screen-width': 'var(--screen-width)'
+                'app-width': 'var(--app-width)'
             },
             fontFamily: {
                 sans: ['"Space Grotesk"', 'sans-serif'],
@@ -22,6 +22,8 @@ export default {
         colors: {
             white: '#FFFFFF',
             black: '#000000',
+            overlay: '#0f0916',
+            modalDialog: '#151517',
             gray: {
                 200: '#BDBDBD',
                 400: '#A1A0A0',

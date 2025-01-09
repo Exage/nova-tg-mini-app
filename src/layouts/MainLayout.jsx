@@ -5,7 +5,7 @@ import { Outlet, useLocation } from 'react-router'
 import { Navigation } from '@/components/Navigation'
 import { DailyRewards } from './DailyRewards/DailyRewards'
 
-import { UpgradeShip } from '@/modals/UpgradeShip/UpgradeShip'
+import { UpgradeShip } from '@/modals/UpgradeShip'
 
 import { useTelegram } from '@/hooks/useTelegram'
 
