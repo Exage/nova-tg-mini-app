@@ -32,6 +32,7 @@ export default {
                 700: '#30303E',
             },
             navBg: '#0D0813',
+            tabsWrapperBg: '#161518',
             blockGradientBg: '#0D0712',
             secondary: {
                 500: '#A1A0A0',

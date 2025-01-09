@@ -54,7 +54,8 @@ function App() {
                     </Route>
 
                     <Route path='spaceport' element={<SpaceportLayout />}>
-                        <Route index element={<Spaceport />} />
+                        <Route index element={<Navigate to={'ships'} />} />
+                        <Route path='ships' element={<Spaceport />} />
                         <Route path='rent' element={<RentStarship />} />
                     </Route>
 
