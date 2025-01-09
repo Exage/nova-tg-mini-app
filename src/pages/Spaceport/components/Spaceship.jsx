@@ -1,4 +1,5 @@
 import styles from '@/Core.module.scss'
+import classNames from 'classnames'
 
 export const Spaceship = ({ data }) => {
     return (
@@ -16,15 +17,15 @@ export const Spaceship = ({ data }) => {
                 <div className={'flex justify-center gap-12 mt-2'}>
                     
                     <div className={'text-center font-serif font-bold text-xl'}>
-                        <div className={styles.iconStroke}>
-                            <img src="/cargo_capacity.svg" alt="" />
+                        <div className={classNames('w-10 h-10 p-1', styles.iconStroke)}>
+                            <img className={'w-full h-full object-cover'} src="/cargo_capacity.svg" alt="" />
                         </div>
                         <p className={'font-serif font-bold text-xl'}>3</p>
                     </div>
 
                     <div className={'text-center'}>
-                        <div className={styles.iconStroke}>
-                            <img src="/mining_speed.svg" alt="" />
+                        <div className={classNames('w-10 h-10 p-1', styles.iconStroke)}>
+                            <img className={'w-full h-full object-cover'} src="/mining_speed.svg" alt="" />
                         </div>
                         <p className={'font-serif font-bold text-xl'}>20</p>
                     </div>

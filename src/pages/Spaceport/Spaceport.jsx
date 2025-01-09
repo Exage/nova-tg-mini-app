@@ -46,9 +46,13 @@ export const Spaceport = () => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
     const handleOpenUpgrade = () => {
-        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'upgradeShip' })
+        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'spaceportUpgradeShip' })
         dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
-        // console.log('123')
+    }
+
+    const handleOpenMint = () => {
+        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'spaceportMintNFT' })
+        dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
     }
 
     return (
@@ -79,22 +83,9 @@ export const Spaceport = () => {
             <MainWrapper py={'py-0'}>
                 <div className={'mt-6 flex flex-col gap-2'}>
                     <Button onClick={handleOpenUpgrade}>Upgrade</Button>
-                    <ButtonSecondary onClick={handleOpenUpgrade} disabled={true}>Mint NFT</ButtonSecondary>
+                    <ButtonSecondary onClick={handleOpenMint}>Mint NFT</ButtonSecondary>
                 </div>
             </MainWrapper>
         </div>
-        // <div className={spaceport}>
-        //     <div className="page__paddings-vertical">
-
-        //         <div className="wrapper">
-        //             <h1 className='page__title'>
-        //                 Spaceport
-        //             </h1>
-        //         </div>
-
-        //         <Cards />
-
-        //     </div>
-        // </div>
     )
 }

@@ -1,6 +1,9 @@
+import { NavLink, Outlet } from 'react-router'
+
 import { MainWrapper } from '@/components/MainWrapper'
 import { PageTitle } from '@/components/PageTitle'
-import { NavLink, Outlet } from 'react-router'
+import { SpaceportUpgradeShip } from '@/modals/SpaceportUpgradeShip'
+import { SpaceporMintNFT } from '@/modals/SpaceporMintNFT'
 
 export const SpaceportLayout = () => {
     return (
@@ -18,6 +21,9 @@ export const SpaceportLayout = () => {
             </MainWrapper>
 
             <Outlet />
+
+            <SpaceportUpgradeShip />
+            <SpaceporMintNFT />
 
         </MainWrapper>
     )
