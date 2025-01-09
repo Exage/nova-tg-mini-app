@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 
-export const Type = ({ type = 'common', className = '' }) => {
-
+export const Type = ({ type = 'common', textSize = 'text-[0.5rem]', className = '' }) => {
     const typeColors = {
         common: 'bg-type-common/70',
         epic: 'bg-type-epic/70',
@@ -14,13 +13,12 @@ export const Type = ({ type = 'common', className = '' }) => {
         <div className={className}>
             <div
                 className={classNames(
-                    'relative z-[1] text-[0.5rem] leading-2 px-[0.4em] capitalize rounded-sm', typeColors[type]
+                    'relative z-[1] leading-nonoe px-[0.4em] py-[0.2em] capitalize rounded-sm',
+                    textSize,
+                    typeColors[type]
                 )}
             >
-
-                <span >
-                    {type}
-                </span>
+                <span>{type}</span>
 
                 <div
                     aria-hidden="true"
