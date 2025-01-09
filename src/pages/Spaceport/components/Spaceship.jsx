@@ -1,3 +1,4 @@
+import { Type } from '@/components/Type'
 import styles from '@/Core.module.scss'
 import classNames from 'classnames'
 
@@ -5,7 +6,14 @@ export const Spaceship = ({ data }) => {
     return (
         <div className={'relative max-w-[21.875rem] w-full h-[21.875rem] overflow-hidden bg-accent-900 border border-accent-300 mx-auto rounded-xl'}>
 
-            <div className={'w-full h-full pb-28'}>
+            <div className={'w-full h-full pb-28 relative'}>
+                
+                <Type 
+                    type={data.type}
+                    textSize={'text-[0.625rem]'}
+                    className={'absolute top-4 left-3'}
+                />
+                
                 <img className={'w-full h-full object-cover'} src={data.photo} alt="" />
             </div>
 

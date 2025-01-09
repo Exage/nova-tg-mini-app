@@ -23,7 +23,11 @@ export const SpaceportUpgradeShip = () => {
                             'relative w-full h-80 border border-accent-300 rounded-xl overflow-hidden'
                         }
                     >
-                        <Type type={data.type} className={'absolute top-4 left-3'} />
+                        <Type
+                            type={data.type}
+                            textSize={'text-[0.625rem]'}
+                            className={'absolute top-4 left-3'}
+                        />
 
                         <img className={'w-full h-full object-cover'} src={data.photo} alt="" />
 
