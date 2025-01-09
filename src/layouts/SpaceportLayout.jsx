@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Outlet } from 'react-router'
+import { useState, useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router'
 
 import { MainWrapper } from '@/components/MainWrapper'
 import { PageTitle } from '@/components/PageTitle'
@@ -20,7 +20,13 @@ const tabsList = [
 ]
 
 export const SpaceportLayout = () => {
-    const [pageTitle, setPageTitle] = useState(tabsList[0].title)
+    const [pageTitle, setPageTitle] = useState('')
+    const location = useLocation()
+
+    useEffect(() => {
+        const currentTab = tabsList.find((tab) => location.pathname.includes(tab.to))
+        setPageTitle(currentTab ? currentTab.title : '')
+    }, [location.pathname])
 
     return (
         <>
