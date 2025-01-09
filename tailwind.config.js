@@ -21,7 +21,10 @@ export default {
         },
         colors: {
             white: '#FFFFFF',
-            black: '#000000',
+            black: {
+                500: '#161518',
+                900: '#000000'
+            },
             overlay: '#0f0916',
             modalDialog: '#151517',
             gray: {
@@ -32,7 +35,6 @@ export default {
                 700: '#30303E',
             },
             navBg: '#0D0813',
-            tabsWrapperBg: '#161518',
             blockGradientBg: '#0D0712',
             secondary: {
                 500: '#A1A0A0',
