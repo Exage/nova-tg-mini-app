@@ -22,11 +22,11 @@ export default {
         colors: {
             white: '#FFFFFF',
             black: {
+                400: '#151517',
                 500: '#161518',
                 900: '#000000'
             },
             overlay: '#0f0916',
-            modalDialog: '#151517',
             gray: {
                 200: '#BDBDBD',
                 400: '#A1A0A0',
