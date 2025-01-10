@@ -6,7 +6,7 @@ import styles from '@/Core.module.scss'
 import { Checkbox } from '@/components/UI/Checkbox'
 
 export const Filter = ({ selectedItems, setSelectedItems }) => {
-    const [openFilter, setOpenFilter] = useState(true)
+    const [openFilter, setOpenFilter] = useState(false)
 
     const items = [{ label: 'common' }, { label: 'rare' }, { label: 'epic' }, { label: 'legendary' }]
 

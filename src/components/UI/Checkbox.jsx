@@ -5,7 +5,7 @@ export const Checkbox = ({ checked, handleCheckboxChange, children }) => {
         <label className={'flex items-center gap-2'}>
             <div
                 className={classNames(
-                    'relative w-4 h-4 border rounded-[4px]',
+                    'relative w-5 h-5 border rounded-[4px]',
                     checked
                         ? 'border-accent-300 text-accent-300'
                         : 'border-accent-200/10 text-accent-300/0'
@@ -13,8 +13,7 @@ export const Checkbox = ({ checked, handleCheckboxChange, children }) => {
             >
                 <svg
                     className={'absolute top-0 left-0'}
-                    width="16"
-                    height="16"
+                    style={{ width: '100%', height: '100%' }}
                     viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
