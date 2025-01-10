@@ -4,7 +4,7 @@ import { useModalsContext } from '@/hooks/useModalsContext'
 import { Type } from '@/components/Type'
 import { ButtonSecondary } from '@/components/UI/Buttons/ButtonSecondary'
 
-export const SpaceporMintNFT = () => {
+export const SpaceportMintNFT = () => {
     const { data } = useModalsContext()
 
     return (

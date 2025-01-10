@@ -3,8 +3,11 @@ import { Outlet, useLocation } from 'react-router'
 
 import { MainWrapper } from '@/components/MainWrapper'
 import { PageTitle } from '@/components/PageTitle'
+
 import { SpaceportUpgradeShip } from '@/modals/SpaceportUpgradeShip'
-import { SpaceporMintNFT } from '@/modals/SpaceporMintNFT'
+import { SpaceportMintNFT } from '@/modals/SpaceportMintNFT'
+import { SpaceportRentShip } from '@/modals/SpaceportRentShip'
+
 import { TabLink } from '@/components/UI/Tabs/TabLink'
 import { TabsWrapper } from '@/components/UI/Tabs/TabsWrapper'
 
@@ -51,7 +54,8 @@ export const SpaceportLayout = () => {
             </MainWrapper>
 
             <SpaceportUpgradeShip />
-            <SpaceporMintNFT />
+            <SpaceportMintNFT />
+            <SpaceportRentShip />
         </>
     )
 }

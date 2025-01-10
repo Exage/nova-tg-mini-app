@@ -5,8 +5,6 @@ import { Outlet, useLocation } from 'react-router'
 import { Navigation } from '@/components/Navigation'
 import { DailyRewards } from './DailyRewards/DailyRewards'
 
-import { SpaceporMintNFT } from '@/modals/SpaceporMintNFT'
-
 import { useTelegram } from '@/hooks/useTelegram'
 
 export const MainLayout = () => {
