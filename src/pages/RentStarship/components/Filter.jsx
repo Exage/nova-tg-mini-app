@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import classNames from 'classnames'
 import styles from '@/Core.module.scss'
@@ -7,8 +7,14 @@ import { Checkbox } from '@/components/UI/Checkbox'
 
 export const Filter = ({ selectedItems, setSelectedItems }) => {
     const [openFilter, setOpenFilter] = useState(false)
+    const filterRef = useRef(null)
 
-    const items = [{ label: 'common' }, { label: 'rare' }, { label: 'epic' }, { label: 'legendary' }]
+    const items = [
+        { label: 'common' },
+        { label: 'rare' },
+        { label: 'epic' },
+        { label: 'legendary' },
+    ]
 
     const handleCheckboxChange = (label) => {
         setSelectedItems((prev) =>
@@ -20,8 +26,22 @@ export const Filter = ({ selectedItems, setSelectedItems }) => {
         setOpenFilter((prev) => !prev)
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (filterRef.current && !filterRef.current.contains(event.target)) {
+                setOpenFilter(false)
+            }
+        }
+
+        document.addEventListener('touchstart', handleClickOutside)
+
+        return () => {
+            document.removeEventListener('touchstart', handleClickOutside)
+        }
+    }, [])
+
     return (
-        <div className={'relative'}>
+        <div className={'relative'} ref={filterRef}>
             <button className={classNames('p-1', styles.iconStroke)} onClick={handleOpenFilter}>
                 <span className={'block w-6 h-6'}>
                     <img className={'w-full h-full object-contain'} src="/filter.svg" alt="" />
@@ -30,7 +50,7 @@ export const Filter = ({ selectedItems, setSelectedItems }) => {
 
             <div
                 className={classNames(
-                    'absolute top-full right-0 pt-1 transition-all duration-200',
+                    'absolute top-full right-0 pt-1 z-10 transition-all duration-200',
                     openFilter ? 'visible' : 'invisible'
                 )}
             >
