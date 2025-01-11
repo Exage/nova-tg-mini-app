@@ -4,6 +4,7 @@ import './App.scss'
 
 import { MainLayout } from './layouts/MainLayout'
 import { SpaceportLayout } from './layouts/SpaceportLayout'
+import { RewardsLayout } from './layouts/RewardsLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
@@ -59,7 +60,10 @@ function App() {
                         <Route path='rent' element={<RentStarship />} />
                     </Route>
 
-                    <Route path='refferal' element={<Refferal />} />
+                    <Route path='rewards' element={<RewardsLayout />}>
+                        <Route index element={<Navigate to={'refferal'} />}></Route>
+                        <Route path='refferal' element={<Refferal />} />
+                    </Route>
                     <Route path='*' element={<NotFound />} />
 
                 </Route>

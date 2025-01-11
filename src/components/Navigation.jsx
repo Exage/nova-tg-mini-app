@@ -33,7 +33,7 @@ const linksList = [
     },
     {
         title: 'Rewards',
-        to: '/quests',
+        to: '/rewards',
         icon: rewardsIcon,
     }
 ]
