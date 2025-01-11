@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from '@/Core.module.scss'
 
-import logo from '@/assets/images/logo.svg'
-
 import { Button } from '@/components/UI/Buttons/Button'
 import { Background } from './components/Background'
 
@@ -25,8 +23,8 @@ export const Start = () => {
 
                 <div className={'flex select-none pointer-events-none'}>
                     <div className={'mx-auto relative'}>
-                        <img className={'pointer-events-none select-none'} src={logo} alt="NOVA" />
-                        <img className={'absolute top-0 left-0 blur-lg opacity-40 pointer-events-none select-none'} src={logo} alt="NOVA" />
+                        <img className={'pointer-events-none select-none'} src={'/logo.svg'} alt="NOVA" />
+                        <img className={'absolute top-0 left-0 blur-lg opacity-40 pointer-events-none select-none'} src={'/logo.svg'} alt="NOVA" />
                     </div>
                 </div>
 

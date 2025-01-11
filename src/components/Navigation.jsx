@@ -2,11 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router'
 import { ReactSVG } from 'react-svg'
 
-import profileIcon from '@/assets/images/navigation/profile.svg'
-import friendsIcon from '@/assets/images/navigation/friends.svg'
-import playIcon from '@/assets/images/navigation/play.svg'
-import starshipIcon from '@/assets/images/navigation/starship.svg'
-import rewardsIcon from '@/assets/images/navigation/rewards.svg'
+import profileIcon from '@/assets/navIcons/profile.svg'
+import friendsIcon from '@/assets/navIcons/friends.svg'
+import playIcon from '@/assets/navIcons/play.svg'
+import starshipIcon from '@/assets/navIcons/starship.svg'
+import rewardsIcon from '@/assets/navIcons/rewards.svg'
 
 import { useTelegram } from '@/hooks/useTelegram'
 

@@ -4,7 +4,7 @@ import classNames from "classnames"
 
 import { UserAvatar } from "@/components/UserAvatar"
 
-import friendsIcon from '@/assets/images/navigation/friends.svg'
+import friendsIcon from '@/assets/navIcons/friends.svg'
 
 export const Friend = ({ data }) => {
     return (

@@ -23,6 +23,7 @@ export default {
             }
         },
         colors: {
+            tgBgColor: 'var(--tg-theme-bg-color)',
             white: '#FFFFFF',
             black: {
                 400: '#151517',

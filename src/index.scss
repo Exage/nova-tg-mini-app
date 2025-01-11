@@ -10,81 +10,6 @@
     }
 }
 
-:root {
-    --bg: #0d0712;
-    --start-bg: #000000;
-    --white: #ffffff;
-    --white-rgb: 255, 255, 255;
-
-    --text-sec: #a1a0a0;
-
-    --btn: #7440a9;
-    --btn-disabled: #40235e;
-
-    --active-link: #b364d8;
-
-    --nav-bg: #0d0813;
-    --nav-border: rgba(255, 255, 255, 0.1);
-
-    --gray: #979797;
-
-    --stat-block-bg: rgba(13, 7, 18, 0.2);
-    --stat-block-title: #c4b1d8;
-    --stat-block-score: #b255ff;
-    --stat-block-ship-name: #b255ff;
-    --stat-block-ship-status: #c4b1d8;
-
-    --spaceport-card-bg: #151517;
-    --spaceport-card-stroke: #a17ff1;
-    --spaceport-card-level: #b364d8;
-    --spaceport-stat-stroke: #30303e;
-    --spaceport-stat-button-bg: #2a282d;
-    --spaceport-stat-button-color: #b255ff;
-    --spaceport-stat-button-color-upgraded: #83d987;
-    --spaceport-pagination-inactive: #39393a;
-    --spaceport-pagination-active: #b364d8;
-
-    --ship-type-color-common: #1fdbfa;
-    --ship-type-color-epic: #b255ff;
-    --ship-type-color-rare: #b8860b;
-    --ship-type-color-legendary: #daa520;
-    --ship-type-color-premium: #d1b104;
-
-    --overlay: rgba(15, 9, 22, 0.76);
-
-    --reward-bg: #151517;
-    --reward-cart-stroke: #30303e;
-    --reward-cart-stroke-earned: #b255ff;
-
-    --quest-item-icon-stroke: #543c6b;
-    --quest-item-bg: #3e225a;
-    --quest-item-stroke: #a17ff1;
-
-    --mission-card-stroke: #a17ff1;
-    --mission-card-bg: #3e225a;
-
-    --chose-spaceship-name-bg: rgba(13, 7, 18, 0.2);
-    --chose-spaceship-block-bg: rgba(13, 7, 18, 0.2);
-    --chose-spaceship-coming-soon: #908e92;
-    --chose-spaceship-block-empty-over-bg: rgba(178, 85, 255, 0.2);
-
-    --ticket-bg: #20132e;
-    --ticket-top: #7a6392;
-    --ticket-primary: #e6e5e6;
-    --ticket-secondary: #c4b1d8;
-    --ticket-divider: #655495;
-    --ticket-line-bg: #d3c1e6;
-    --ticket-line-stroke: #9883ae;
-
-    --upgrade-ship-progress: #30303e;
-    --upgrade-ship-progress-bar: #b255ff;
-
-    --counter-border: #a17ff1;
-    --counter-bg: #3e225a;
-
-    --refferal-friend-border: #515151;
-}
-
 html,
 body,
 #root {
@@ -105,17 +30,7 @@ html {
 }
 
 body {
-    // font-family: 'Space Grotesk', sans-serif;
-
-    margin: 0;
-    padding: 0;
-
-    color: var(--white);
-    background-color: var(--bg);
-
-    &.modal-opened {
-        overflow: hidden;
-    }
+    @apply text-white bg-tgBgColor;
 }
 
 *,

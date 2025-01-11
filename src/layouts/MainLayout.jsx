@@ -3,7 +3,6 @@ import React, { useRef, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router'
 
 import { Navigation } from '@/components/Navigation'
-import { DailyRewards } from './DailyRewards/DailyRewards'
 
 import { useTelegram } from '@/hooks/useTelegram'
 
@@ -29,8 +28,6 @@ export const MainLayout = () => {
             </div>
 
             <Navigation />
-
-            <DailyRewards />
             
         </div>
     )

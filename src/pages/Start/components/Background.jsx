@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Blurhash } from 'react-blurhash'
 
-import bg from '@/assets/images/start/bg.jpg'
-
 const photoHash = 'L142F[OGE4iw?w%fD%My9u.8iu9G'
 
 export const Background = () => {
@@ -22,7 +20,7 @@ export const Background = () => {
                     style={{ width: '100%', height: '100%', opacity: bgLoaded ? '0' : '1' }}
                 />
                 <img
-                    src={bg}
+                    src={'/bg.jpg'}
                     alt="Background Photo"
                     className={'absolute top-0 left-0 w-full h-full object-cover pointer-events-none select-none -z-20'}
                     style={{ display: bgLoaded ? 'block' : 'none' }}

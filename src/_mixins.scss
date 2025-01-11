@@ -1,5 +1,0 @@
-@mixin response ($bp) {
-    @media(max-width: $bp) {
-        @content
-    }
-}
