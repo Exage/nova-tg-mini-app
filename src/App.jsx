@@ -16,6 +16,7 @@ import { Selection } from './pages/Selection/Selection'
 import { Ticket } from './pages/Ticket/Ticket'
 import { Refferal } from './pages/Refferal/Refferal'
 import { RentStarship } from './pages/RentStarship/RentStarship'
+import { Shoping } from './pages/Shoping/Shoping'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -44,6 +45,8 @@ function App() {
                 <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
 
                     <Route path='profile' element={<Profile />} />
+
+                    <Route path='shoping' element={<Shoping />} />
 
                     <Route path='play'>
                         <Route index element={<Navigate to={'galaxies'} />}/>
