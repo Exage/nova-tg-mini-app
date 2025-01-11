@@ -9,7 +9,7 @@ import { RewardsLayout } from './layouts/RewardsLayout'
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
 import { Spaceport } from './pages/Spaceport/Spaceport'
-import { Quests } from './pages/Rewards/Quests'
+import { Quests } from './pages/Quests/Quests'
 import { Galaxies } from './pages/Galaxies/Galaxies'
 import { Missions } from './pages/Missions/Missions'
 import { Selection } from './pages/Selection/Selection'
@@ -44,7 +44,6 @@ function App() {
                 <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
 
                     <Route path='profile' element={<Profile />} />
-                    <Route path='quests' element={<Quests />} />
 
                     <Route path='play'>
                         <Route index element={<Navigate to={'galaxies'} />}/>
@@ -63,7 +62,9 @@ function App() {
                     <Route path='rewards' element={<RewardsLayout />}>
                         <Route index element={<Navigate to={'refferal'} />}></Route>
                         <Route path='refferal' element={<Refferal />} />
+                        <Route path='quests' element={<Quests />} />
                     </Route>
+
                     <Route path='*' element={<NotFound />} />
 
                 </Route>

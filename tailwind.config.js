@@ -17,6 +17,9 @@ export default {
             },
             screens: {
                 'spaceport': '364px'
+            },
+            backgroundImage: {
+                'glass-gradient': 'linear-gradient(135deg, rgba(217, 217, 217, 0.05) 30%, rgba(115, 115, 115, 0) 70%)'
             }
         },
         colors: {
