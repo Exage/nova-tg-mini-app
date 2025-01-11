@@ -1,38 +1,19 @@
 import React from 'react'
-import styles from './Refferal.module.scss'
 
-import { Counter } from './Counter/Counter'
-import { Button } from '@/components/UI/Button/Button'
-import { Friends } from './Friends/Friends'
+import { PointsBalance } from './components/PointsBalance'
+import { FriendList } from './components/FriendList'
 
 export const Refferal = () => {
-
-    const { btns } = styles
-
     return (
-        <div className='wrapper page__paddings-vertical'>
+        <div className={'mt-2'}>
+            <p className={'text-gray-400 text-base font-bold mt-2'}>
+                Get 10% from friends, + 1% from their refferals
+            </p>
 
-            <h1 className='page__title'>
-                Refferal
-            </h1>
-            <h2 className='page__subtitle'>
-                Get 10% from friends, + 1% from their refferal
-            </h2>
-
-            <Counter />
-
-            <div className={btns}>
-                <Button disabled={true}>
-                    Claim
-                </Button>
-
-                <Button>
-                    Invite Friends
-                </Button>
+            <div className={'mt-2'}>
+                <PointsBalance />
+                <FriendList />
             </div>
-
-            <Friends />
-
         </div>
     )
 }

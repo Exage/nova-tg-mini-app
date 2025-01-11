@@ -10,15 +10,5 @@ export default defineConfig({
             "@": path.resolve(__dirname, 'src')
         }
     },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `
-                    @use 'src/vars' as *;
-                    @use 'src/mixins' as *;
-                `
-            },
-        },
-    },
     base: '/'
 })

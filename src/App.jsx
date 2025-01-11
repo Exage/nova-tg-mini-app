@@ -2,17 +2,21 @@ import React, { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import './App.scss'
 
-import { MainLayout } from './components/MainLayout/MainLayout'
+import { MainLayout } from './layouts/MainLayout'
+import { SpaceportLayout } from './layouts/SpaceportLayout'
+import { RewardsLayout } from './layouts/RewardsLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
 import { Spaceport } from './pages/Spaceport/Spaceport'
-import { Quests } from './pages/Rewards/Quests'
-import { Play } from './pages/Play/Play'
-import { Missions } from './pages/Play/Missions/Missions'
-import { Selection } from './pages/Play/Selection/Selection'
-import { Confirm } from './pages/Play/Confirm/Confirm'
+import { Quests } from './pages/Quests/Quests'
+import { Galaxies } from './pages/Galaxies/Galaxies'
+import { Missions } from './pages/Missions/Missions'
+import { Selection } from './pages/Selection/Selection'
+import { Ticket } from './pages/Ticket/Ticket'
 import { Refferal } from './pages/Refferal/Refferal'
+import { RentStarship } from './pages/RentStarship/RentStarship'
+import { Shoping } from './pages/Shoping/Shoping'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -36,21 +40,34 @@ function App() {
         <div className="App">
             <Routes>
 
-                <Route index element={user ? <Navigate to='/profile' /> : <Start />} />
+                <Route index element={user ? <Navigate to={'/profile'} /> : <Start />} />
 
-                <Route element={user ? <MainLayout /> : <Navigate to='/' />}>
+                <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
 
                     <Route path='profile' element={<Profile />} />
-                    <Route path='spaceport' element={<Spaceport />} />
-                    <Route path='quests' element={<Quests />} />
 
-                    <Route path='play' element={<Play />}>
-                        <Route index element={<Missions />} />
+                    <Route path='shoping' element={<Shoping />} />
+
+                    <Route path='play'>
+                        <Route index element={<Navigate to={'galaxies'} />}/>
+                        <Route path='galaxies' element={<Galaxies />} />
+                        <Route path='missions' element={<Missions />} />
                         <Route path='selection' element={<Selection />} />
-                        <Route path='confirm' element={<Confirm />} />
+                        <Route path='ticket' element={<Ticket />} />
                     </Route>
 
-                    <Route path='refferal' element={<Refferal />} />
+                    <Route path='spaceport' element={<SpaceportLayout />}>
+                        <Route index element={<Navigate to={'ships'} />} />
+                        <Route path='ships' element={<Spaceport />} />
+                        <Route path='rent' element={<RentStarship />} />
+                    </Route>
+
+                    <Route path='rewards' element={<RewardsLayout />}>
+                        <Route index element={<Navigate to={'refferal'} />}></Route>
+                        <Route path='refferal' element={<Refferal />} />
+                        <Route path='quests' element={<Quests />} />
+                    </Route>
+
                     <Route path='*' element={<NotFound />} />
 
                 </Route>

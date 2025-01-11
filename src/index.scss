@@ -1,78 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap');
 
-:root {
-    --bg: #0D0712;
-    --start-bg: #000000;
-    --white: #ffffff;
-    --white-rgb: 255, 255, 255;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    --text-sec: #A1A0A0;
-
-    --btn: #7440A9;
-    --btn-disabled: #40235E;
-
-    --active-link: #B364D8;
-
-    --nav-bg: #0D0813;
-    --nav-border: rgba(255, 255, 255, 0.1);
-
-    --gray: #979797;
-
-    --stat-block-bg: rgba(13, 7, 18, 0.2);
-    --stat-block-title: #C4B1D8;
-    --stat-block-score: #B255FF;
-    --stat-block-ship-name: #B255FF;
-    --stat-block-ship-status: #C4B1D8;
-
-    --spaceport-card-bg: #151517;
-    --spaceport-card-stroke: #A17FF1;
-    --spaceport-card-level: #B364D8;
-    --spaceport-stat-stroke: #30303E;
-    --spaceport-stat-button-bg: #2A282D;
-    --spaceport-stat-button-color: #B255FF;
-    --spaceport-stat-button-color-upgraded: #83D987;
-    --spaceport-pagination-inactive: #39393A;
-    --spaceport-pagination-active: #B364D8;
-
-    --ship-type-color-common: #1FDBFA;
-    --ship-type-color-epic: #B255FF;
-    --ship-type-color-rare: #B8860B;
-    --ship-type-color-legendary: #DAA520;
-    --ship-type-color-premium: #D1B104;
-
-    --overlay: rgba(15, 9, 22, 0.76);
-
-    --reward-bg: #151517;
-    --reward-cart-stroke: #30303E;
-    --reward-cart-stroke-earned: #B255FF;
-
-    --quest-item-icon-stroke: #543C6B;
-    --quest-item-bg: #3E225A;
-    --quest-item-stroke: #A17FF1;
-
-    --mission-card-stroke: #A17FF1;
-    --mission-card-bg: #3E225A;
-
-    --chose-spaceship-name-bg: rgba(13, 7, 18, 0.2);
-    --chose-spaceship-block-bg: rgba(13, 7, 18, 0.2);
-    --chose-spaceship-coming-soon: #908E92;
-    --chose-spaceship-block-empty-over-bg: rgba(178, 85, 255, 0.2);
-
-    --ticket-bg: #20132E;
-    --ticket-top: #7A6392;
-    --ticket-primary: #E6E5E6;
-    --ticket-secondary: #C4B1D8;
-    --ticket-divider: #655495;
-    --ticket-line-bg: #D3C1E6;
-    --ticket-line-stroke: #9883AE;
-
-    --upgrade-ship-progress: #30303E;
-    --upgrade-ship-progress-bar: #B255FF;
-
-    --counter-border: #A17FF1;
-    --counter-bg: #3E225A;
-
-    --refferal-friend-border: #515151;
+@layer base {
+    :root {
+        --app-width: 520px;
+    }
 }
 
 html,
@@ -91,22 +26,11 @@ body,
 html {
     position: fixed;
     height: auto !important;
-    font-size: 62.5%;
+    // font-size: 62.5%;
 }
 
 body {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 16px;
-
-    margin: 0;
-    padding: 0;
-
-    color: var(--white);
-    background-color: var(--bg);
-
-    &.modal-opened {
-        overflow: hidden;
-    }
+    @apply text-white bg-tgBgColor;
 }
 
 *,
@@ -160,76 +84,21 @@ ol {
     padding-inline: 0;
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    outline: none;
-    border: none;
-    background: none;
-    color: inherit;
-    line-height: 1;
-}
+.spaceport-pagintaion {
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+    --swiper-pagination-bullet-border-radius: 3px;
+    --swiper-pagination-color: inherit;
+    --swiper-pagination-bullet-inactive-color: inherit;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 3px;
 
-.page__title {
-    font-size: 3.2rem;
-    font-weight: 500;
-    color: var(--white);
-}
-
-.page__subtitle {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--text-sec);
-}
-
-.page__paddings-vertical {
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
-}
-
-.wrapper {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-@mixin boxShadowShipType($color) {
-    box-shadow: 0px 0px 2.8px $color
-}
-
-.ship-type {
-
-    font-size: 1rem;
-
-    padding: 0.4em 0.6em;
-    border-radius: 0.2rem;
-
-    text-transform: capitalize;
-
-    &__common {
-        background-color: var(--ship-type-color-common);
-        @include boxShadowShipType(var(--ship-type-color-common));
+    .swiper-pagination-bullet {
+        @apply bg-gray-700 transition-all duration-300;
     }
 
-    &__epic {
-        background-color: var(--ship-type-color-epic);
-        @include boxShadowShipType(var(--ship-type-color-epic));
-    }
-
-    &__rare {
-        background-color: var(--ship-type-color-rare);
-        @include boxShadowShipType(var(--ship-type-color-rare));
-    }
-
-    &__legendary {
-        background-color: var(--ship-type-color-legendary);
-        @include boxShadowShipType(var(--ship-type-color-legendary));
-    }
-
-    &__premium {
-        background-color: var(--ship-type-color-premium);
-        @include boxShadowShipType(var(--ship-type-color-premium));
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        --swiper-pagination-bullet-width: 35px;
+        @apply bg-accent-500;
     }
 }

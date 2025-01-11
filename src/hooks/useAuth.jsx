@@ -3,14 +3,14 @@ import { useUserContext } from './useUserContext'
 
 export const useAuth = () => {
 
-    const [isLoading, setIsLoading] = useState(null)
+    const [loading, setLoading] = useState(null)
     const [error, setError] = useState(null)
 
     const { ACTIONS, dispatch } = useUserContext()
 
     const auth = async (data) => {
 
-        setIsLoading(true)
+        setLoading(true)
         setError(null)
 
         try {
@@ -37,10 +37,10 @@ export const useAuth = () => {
         } catch (error) {
             setError(error.message)
         } finally {
-            setIsLoading(false)
+            setLoading(false)
         }
     }
 
 
-    return { isLoading, error, auth }
+    return { loading, error, auth }
 }

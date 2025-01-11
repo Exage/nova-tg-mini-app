@@ -1,0 +1,116 @@
+.startTopGradient {
+    @apply 
+        before:absolute 
+        before:top-0 
+        before:left-0 
+        before:w-full 
+        before:h-[6.56rem] 
+        before:bg-gradient-to-b 
+        before:from-black-900 before:z-20;
+}
+
+.btnGradient {
+    // @apply 
+    //     before:absolute 
+    //     before:inset-0 
+    //     before:z-[-1] 
+    //     before:bg-gradient-to-r 
+    //     before:p-[1px] 
+    //     before:from-accent-700 
+    //     before:via-accent-600 
+    //     before:via-30% 
+    //     before:to-accent-700;
+}
+
+.wrapper {
+    @apply px-5;
+}
+
+.userAvatarFrame {
+    mask-image: url(/avatar-frame-mask.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.userAvatarLooper {
+    @apply 
+        before:absolute 
+        before:top-1/2 
+        before:left-1/2 
+        before:-translate-x-1/2 
+        before:-translate-y-1/2 
+        before:bg-[url('/looper.svg')] 
+        before:bg-cover 
+        before:bg-no-repeat 
+        before:w-[127%] 
+        before:h-[127%]
+        before:-z-[1];
+}
+
+.gradietBlockStroke {
+    @apply 
+        relative 
+        bg-blockGradientBg/20
+        p-[0.125rem]
+        rounded-lg
+        backdrop:blur-sm
+        before:inset-0 
+        before:p-[0.125rem]
+        before:absolute
+        before:rounded-[inherit];
+
+    &::before {
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: destination-out;
+
+        background: rgb(48, 37, 77);
+        background: linear-gradient(
+            166deg,
+            rgba(48, 37, 77, 1) 0%,
+            rgba(48, 37, 77, 0.32) 35%,
+            rgba(48, 37, 77, 0.39) 58%,
+            rgba(48, 37, 77, 1) 100%
+        );
+    }
+}
+
+.gemAfter {
+    @apply
+        after:inline-block 
+        after:bg-[url("/gem.svg")] 
+        after:bg-contain 
+        after:bg-no-repeat 
+        after:bg-center;
+}
+
+.gemBefore {
+    @apply
+        before:inline-block 
+        before:bg-[url("/gem.svg")] 
+        before:bg-contain 
+        before:bg-no-repeat 
+        before:bg-center;
+}
+
+.pageTitle {
+    @apply font-bold text-4xl text-white;
+}
+
+.iconStroke {
+    @apply border border-white/10 rounded-md;
+}
+
+.iconGlassBlock {
+    @apply 
+        relative 
+        bg-glass-gradient 
+        border 
+        border-white/10 
+        rounded-md;
+}
+
+.transitionModal {
+    transition-property: background-color, visibility;
+    @apply duration-300 ease-in-out;
+}
