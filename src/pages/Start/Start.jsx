@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '@/Core.module.scss'
 
 import { Button } from '@/components/UI/Buttons/Button'
@@ -6,13 +6,21 @@ import { Background } from './components/Background'
 
 import { useUserContext } from '@/hooks/useUserContext'
 
+import { useTelegram } from '@/hooks/useTelegram'
+
 export const Start = () => {
 
+    const { tg } = useTelegram()
     const { dispatch, ACTIONS } = useUserContext()
 
     const handleStartBtn = () => {
         dispatch({ type: ACTIONS.SET_USER, payload: {} })
     }
+
+    useEffect(() => {
+        tg.setHeaderColor('#000000')
+        document.body.style.backgroundColor = '#000'
+    }, [tg])
 
     return (
         <div className={`relative pt-5 pb-10 bg-black h-screen ${styles.startTopGradient}`}>

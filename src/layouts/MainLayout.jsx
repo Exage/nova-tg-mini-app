@@ -7,7 +7,7 @@ import { Navigation } from '@/components/Navigation'
 import { useTelegram } from '@/hooks/useTelegram'
 
 export const MainLayout = () => {
-
+    const { tg } = useTelegram()
     const overflowRef = useRef(null)
 
     const { platform } = useTelegram()
@@ -20,15 +20,22 @@ export const MainLayout = () => {
         }
     }, [pathname])
 
-    return (
-        <div className={`h-screen bg-[url("/main-layout-bg.svg")] bg-center bg-cover bg-no-repeat ${platform === 'ios' ? 'pb-[6.25rem]' : 'pb-20'}`}>
+    useEffect(() => {
+        tg.setHeaderColor('#0D0712')
+        document.body.style.backgroundColor = '#0D0712'
+    }, [tg])
 
+    return (
+        <div
+            className={`h-screen bg-[url("/main-layout-bg.svg")] bg-center bg-cover bg-no-repeat ${
+                platform === 'ios' ? 'pb-[6.25rem]' : 'pb-20'
+            }`}
+        >
             <div ref={overflowRef} className={'h-full overflow-auto'}>
                 <Outlet />
             </div>
 
             <Navigation />
-            
         </div>
     )
 }

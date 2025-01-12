@@ -24,54 +24,47 @@ import { useUserContext } from './hooks/useUserContext'
 import { useTelegram } from './hooks/useTelegram'
 
 function App() {
-
     const { user } = useUserContext()
     const { tg } = useTelegram()
 
     useEffect(() => {
-
         tg.disableVerticalSwipes()
         tg.lockOrientation()
         tg.expand()
-        
     }, [tg])
 
     return (
         <div className="App">
             <Routes>
-
                 <Route index element={user ? <Navigate to={'/profile'} /> : <Start />} />
 
                 <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
+                    <Route path="profile" element={<Profile />} />
 
-                    <Route path='profile' element={<Profile />} />
+                    <Route path="shoping" element={<Shoping />} />
 
-                    <Route path='shoping' element={<Shoping />} />
-
-                    <Route path='play'>
-                        <Route index element={<Navigate to={'galaxies'} />}/>
-                        <Route path='galaxies' element={<Galaxies />} />
-                        <Route path='missions' element={<Missions />} />
-                        <Route path='selection' element={<Selection />} />
-                        <Route path='ticket' element={<Ticket />} />
+                    <Route path="play">
+                        <Route index element={<Navigate to={'galaxies'} />} />
+                        <Route path="galaxies" element={<Galaxies />} />
+                        <Route path="missions" element={<Missions />} />
+                        <Route path="selection" element={<Selection />} />
+                        <Route path="ticket" element={<Ticket />} />
                     </Route>
 
-                    <Route path='spaceport' element={<SpaceportLayout />}>
+                    <Route path="spaceport" element={<SpaceportLayout />}>
                         <Route index element={<Navigate to={'ships'} />} />
-                        <Route path='ships' element={<Spaceport />} />
-                        <Route path='rent' element={<RentStarship />} />
+                        <Route path="ships" element={<Spaceport />} />
+                        <Route path="rent" element={<RentStarship />} />
                     </Route>
 
-                    <Route path='rewards' element={<RewardsLayout />}>
+                    <Route path="rewards" element={<RewardsLayout />}>
                         <Route index element={<Navigate to={'refferal'} />}></Route>
-                        <Route path='refferal' element={<Refferal />} />
-                        <Route path='quests' element={<Quests />} />
+                        <Route path="refferal" element={<Refferal />} />
+                        <Route path="quests" element={<Quests />} />
                     </Route>
 
-                    <Route path='*' element={<NotFound />} />
-
+                    <Route path="*" element={<NotFound />} />
                 </Route>
-
             </Routes>
         </div>
     )
