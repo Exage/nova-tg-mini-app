@@ -4,7 +4,6 @@ import { Blurhash } from 'react-blurhash'
 const photoHash = 'L142F[OGE4iw?w%fD%My9u.8iu9G'
 
 export const Background = () => {
-
     const [bgLoaded, setBgLoaded] = useState(false)
 
     const handleLoadPhoto = () => {
@@ -13,7 +12,7 @@ export const Background = () => {
 
     return (
         <div className={'absolute top-0 left-0 w-full h-full overflow-hidden z-10'}>
-            <div className={'relative h-full'}>
+            {/* <div className={'relative h-full'}>
                 <Blurhash
                     className={'absolute top-0 left-0 w-full h-full -z-10 transition-opacity duration-500 ease-in-out'}
                     hash={photoHash}
@@ -26,7 +25,9 @@ export const Background = () => {
                     style={{ display: bgLoaded ? 'block' : 'none' }}
                     onLoad={handleLoadPhoto}
                 />
-            </div>
+            </div> */}
+
+            <video className={'w-full h-full object-cover pb-4'} src="/start_bg.mp4" autoPlay muted></video>
         </div>
     )
 }
