@@ -12,7 +12,7 @@ const missionsList = {
             title: 'Mission 1',
             description:
                 'A young galaxy filled with light and simple minerals. It serves as the starting point for rookie pilots.',
-            gems: '0.1 - 4',
+            gems: '0.1',
             type: 'common',
             distance: 150,
         },
@@ -22,7 +22,7 @@ const missionsList = {
             title: 'Mission 2',
             description:
                 'A mysterious galaxy shrouded in dense gas clouds, hiding precious rare minerals.',
-            gems: '5 - 11',
+            gems: '5',
             type: 'rare',
             distance: 300,
         },
@@ -32,7 +32,7 @@ const missionsList = {
             title: 'Mission 3',
             description:
                 'A grand galaxy of cosmic phenomena, radiating with valuable epic materials.',
-            gems: '9.9 - 16',
+            gems: '9.9',
             type: 'epic',
             distance: 500,
         },
@@ -42,7 +42,7 @@ const missionsList = {
             title: 'Mission 4',
             description:
                 ' A majestic galaxy with awe-inspiring celestial formations and legendary resources.',
-            gems: '17 - 27',
+            gems: '17',
             type: 'legendary',
             distance: 750,
         },
@@ -52,7 +52,7 @@ const missionsList = {
             title: 'Mission 5',
             description:
                 'The ultimate galaxy, shrouded in mystery and home to the rarest materials in the universe.',
-            gems: '50 - 100',
+            gems: '50',
             type: 'legendary',
             distance: 1000,
         },
@@ -64,7 +64,7 @@ const missionsList = {
             title: 'Mission 1',
             description:
                 'A young galaxy filled with light and simple minerals. It serves as the starting point for rookie pilots.',
-            gems: '0.1 - 4',
+            gems: '0.1',
             type: 'common',
             distance: 150,
         },
@@ -74,7 +74,7 @@ const missionsList = {
             title: 'Mission 2',
             description:
                 'The ultimate galaxy, shrouded in mystery and home to the rarest materials in the universe.',
-            gems: '50 - 100',
+            gems: '50',
             type: 'legendary',
             distance: 1000,
         },

@@ -15,17 +15,8 @@ export const Mission = ({ data }) => {
         <Link to={'/play/selection'} state={{ ...locationData, mission: data }}>
             <Block className={'relative pt-6 pb-2.5 px-2'}>
 
-                <div className={'w-full absolute top-0 left-0 flex justify-center'}>
-                    <span className={'font-bold text-[0.625rem] uppercase px-2.5 bg-accent-300 rounded-b-lg'}>
-                        {data.distance} km
-                    </span>
-                </div>
-
                 <div className={'w-full max-w-[8.75rem] mx-auto'}>
                     <div className={'relative w-full h-[4.68rem] bg-accent-900 rounded-lg overflow-hidden'}>
-
-                        <Type type={data.type} className={'absolute top-2 left-2'} />
-
                         <img className={'w-full object-cover'} src={data.cover} alt="" />
                     </div>
 
