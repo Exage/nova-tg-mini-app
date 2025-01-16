@@ -12,8 +12,9 @@ import { Spaceship } from './components/Spaceship'
 import { Button } from '@/components/UI/Buttons/Button'
 import { ButtonSecondary } from '@/components/UI/Buttons/ButtonSecondary'
 
-import { useModalsContext } from '@/hooks/useModalsContext'
 import { MainWrapper } from '@/components/MainWrapper'
+
+import { useModals } from '@/lib/modalsStore'
 
 const shipPhoto = '/ship-ph.jpg'
 const spaceships = [
@@ -41,18 +42,16 @@ const spaceships = [
 ]
 
 export const Spaceport = () => {
-    const { dispatch, ACTIONS } = useModalsContext()
+    const { openModal } = useModals()
 
     const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
     const handleOpenUpgrade = () => {
-        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'spaceportUpgradeShip' })
-        dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
+        openModal('spaceportUpgradeShip', spaceships[activeSlideIndex])
     }
 
     const handleOpenMint = () => {
-        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'spaceportMintNFT' })
-        dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: spaceships[activeSlideIndex] })
+        openModal('spaceportMintNFT', spaceships[activeSlideIndex])
     }
 
     return (

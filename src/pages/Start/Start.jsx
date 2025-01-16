@@ -4,16 +4,16 @@ import styles from '@/Core.module.scss'
 import { Button } from '@/components/UI/Buttons/Button'
 import { Background } from './components/Background'
 
-import { useUserContext } from '@/hooks/useUserContext'
+import { useUser } from '@/lib/userStore'
 
 import { useTelegram } from '@/hooks/useTelegram'
 
 export const Start = () => {
     const { tg } = useTelegram()
-    const { dispatch, ACTIONS } = useUserContext()
+    const { setUser } = useUser()
 
     const handleStartBtn = () => {
-        dispatch({ type: ACTIONS.SET_USER, payload: {} })
+        setUser({})
     }
 
     useEffect(() => {

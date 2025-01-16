@@ -3,14 +3,14 @@ import classNames from 'classnames'
 
 import styles from '@/Core.module.scss'
 
-import { useModalsContext } from '@/hooks/useModalsContext'
+import { useModals } from '@/lib/modalsStore'
 
 export const ModalWrapper = ({ modalId = '', children }) => {
     const overlayRef = useRef(null)
     const dialogRef = useRef(null)
     const dialogChildrenRef = useRef(null)
 
-    const { modals, dispatch, ACTIONS } = useModalsContext()
+    const { modals, closeModal } = useModals()
 
     const [isDragged, setIsDragged] = useState(false)
     const [yStart, setYStart] = useState(0)
@@ -23,7 +23,7 @@ export const ModalWrapper = ({ modalId = '', children }) => {
     }
 
     const handleClose = () => {
-        dispatch({ type: ACTIONS.CLOSE_MODAL, payload: modalId })
+        closeModal(modalId)
         setYStart(0)
         setDialogTransform(0)
     }

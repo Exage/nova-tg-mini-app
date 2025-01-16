@@ -20,11 +20,11 @@ import { Shoping } from './pages/Shoping/Shoping'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
-import { useUserContext } from './hooks/useUserContext'
 import { useTelegram } from './hooks/useTelegram'
+import { useUser } from './lib/userStore'
 
 function App() {
-    const { user } = useUserContext()
+    const { user } = useUser()
     const { tg } = useTelegram()
 
     useEffect(() => {

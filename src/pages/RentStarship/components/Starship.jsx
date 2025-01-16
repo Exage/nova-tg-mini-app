@@ -4,14 +4,13 @@ import styles from '@/Core.module.scss'
 import { Type } from '@/components/Type'
 import { Button } from '@/components/UI/Buttons/Button'
 
-import { useModalsContext } from '@/hooks/useModalsContext'
+import { useModals } from '@/lib/modalsStore'
 
 export const Starship = ({ data }) => {
-    const { dispatch, ACTIONS } = useModalsContext()
+    const { openModal } = useModals()
 
     const handleCallModal = () => {
-        dispatch({ type: ACTIONS.OPEN_MODAL, payload: 'spaceportRentShip' })
-        dispatch({ type: ACTIONS.SET_MODAL_DATA, payload: data })
+        openModal('spaceportRentShip', data)
     }
 
     return (
