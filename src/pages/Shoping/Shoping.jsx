@@ -13,9 +13,14 @@ export const Shoping = () => {
 
 const CaseComponent = () => {
     const [isOpen, setIsOpen] = useState(false)
-
     const [selectedItem, setSelectedItem] = useState(null)
     const [shuffledItems, setShuffledItems] = useState([])
+    const [translateX, setTranslateX] = useState(0)
+
+    const blockWidth = 208
+    const blockHeight = 64
+    const gap = 20
+    const windowWidth = window.innerWidth >= 520 ? 520 : window.innerWidth
 
     const items = [
         { id: 1, name: 'Ship 1' },
@@ -26,7 +31,7 @@ const CaseComponent = () => {
     ]
 
     const openCase = () => {
-        const duplicationCount = 3
+        const duplicationCount = 6
 
         let extendedArray = []
         for (let i = 0; i < duplicationCount; i++) {
@@ -46,9 +51,16 @@ const CaseComponent = () => {
 
         const shuffledArray = shuffleArray(extendedArray)
         setShuffledItems(shuffledArray)
-    }
 
-    console.log(shuffledItems)
+        const startIndex = 3
+        const endIndex = shuffledArray.length - 3
+
+        console.log(shuffledArray)
+
+        const targetTranslateX = -((blockWidth + gap) * endIndex)
+        setTranslateX(-((blockWidth + gap) * startIndex))
+        setTimeout(() => setTranslateX(targetTranslateX), 10)
+    }
 
     return (
         <div className="overflow-hidden">
@@ -62,16 +74,26 @@ const CaseComponent = () => {
             </div>
 
             <div className="flex mt-7">
-                <div className="flex gap-5">
-                    {shuffledItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className="w-52 h-16 flex items-center justify-center text-black-900 bg-white"
-                        >
-                            {item.name}
-                        </div>
-                    ))}
-                </div>
+                {shuffledItems.length !== 0 && (
+                    <div
+                        className="flex"
+                        style={{
+                            gap,
+                            transform: `translateX(${translateX}px)`,
+                            transition: 'transform 7s ease-out',
+                            padding: `0 ${(windowWidth - blockWidth) / 2}px`,
+                        }}
+                    >
+                        {shuffledItems.map((item, index) => (
+                            <div
+                                key={index}
+                                className="w-52 h-16 flex items-center justify-center text-black-900 bg-white"
+                            >
+                                {item.name}
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

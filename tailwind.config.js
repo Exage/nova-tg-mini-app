@@ -23,12 +23,12 @@ export default {
                     'linear-gradient(135deg, rgba(217, 217, 217, 0.05) 30%, rgba(115, 115, 115, 0) 70%)',
             },
             animation: {
-                scroll: 'scroll 7s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+                scroll: 'scroll 7s cubic-bezier(.06,.91,.72,.96) forwards'
             },
             keyframes: {
                 scroll: {
                     '0%': { transform: 'translateX(0)' },
-                    '100%': { transform: 'translateX(-100%)' },
+                    '100%': { transform: `translateX(-80%)` },
                 },
             },
         },
