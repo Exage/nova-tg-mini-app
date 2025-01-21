@@ -5,6 +5,7 @@ import './App.scss'
 import { MainLayout } from './layouts/MainLayout'
 import { SpaceportLayout } from './layouts/SpaceportLayout'
 import { RewardsLayout } from './layouts/RewardsLayout'
+import { BoxesLayout } from './layouts/BoxesLayout'
 
 import { Start } from './pages/Start/Start'
 import { Profile } from './pages/Profile/Profile'
@@ -17,6 +18,9 @@ import { Ticket } from './pages/Ticket/Ticket'
 import { Refferal } from './pages/Refferal/Refferal'
 import { RentStarship } from './pages/RentStarship/RentStarship'
 import { Shoping } from './pages/Shoping/Shoping'
+import { BuyBoxes } from './pages/BuyBoxes/BuyBoxes'
+import { UserBoxes } from './pages/UserBoxes/UserBoxes'
+import { OpenBox } from './pages/OpenBox/OpenBox'
 
 import { NotFound } from './pages/NotFound/NotFound'
 
@@ -41,7 +45,15 @@ function App() {
                 <Route element={user ? <MainLayout /> : <Navigate to={'/'} />}>
                     <Route path="profile" element={<Profile />} />
 
-                    <Route path="shoping" element={<Shoping />} />
+                    <Route path="shoping">
+                        <Route index element={<Shoping />} />
+                        <Route path="boxes" element={<BoxesLayout />}>
+                            <Route index element={<Navigate to={'buy'} />} />
+                            <Route path="buy" element={<BuyBoxes />} />
+                            <Route path="my" element={<UserBoxes />} />
+                        </Route>
+                        <Route path="openbox" element={<OpenBox />} />
+                    </Route>
 
                     <Route path="play">
                         <Route index element={<Navigate to={'galaxies'} />} />
