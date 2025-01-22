@@ -1,25 +1,36 @@
-import { useState } from "react"
+import { useEffect, useState } from 'react'
+import { Starship } from './components/Starship'
+
+const photo = '/ship-ph.jpg'
+
+const items = [
+    { id: 1, name: 'Ship 1', photo },
+    { id: 2, name: 'Ship 2', photo },
+    { id: 3, name: 'Ship 3', photo },
+    { id: 4, name: 'Ship 4', photo },
+    { id: 5, name: 'Ship 5', photo },
+]
 
 export const OpenBox = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [selectedItem, setSelectedItem] = useState(null)
     const [shuffledItems, setShuffledItems] = useState([])
     const [translateX, setTranslateX] = useState(0)
+    const [startTranslateX, setStartTranslateX] = useState(0)
+    const [endTranslateX, setEndTranslateX] = useState(0)
+    const [animationName, setAnimationName] = useState('')
 
-    const blockWidth = 208
-    const blockHeight = 64
+    const blockWidth = 200
+    const blockHeight = 145
     const gap = 20
     const windowWidth = window.innerWidth >= 520 ? 520 : window.innerWidth
+    const animationDuration = 7000
 
-    const items = [
-        { id: 1, name: 'Ship 1' },
-        { id: 2, name: 'Ship 2' },
-        { id: 3, name: 'Ship 3' },
-        { id: 4, name: 'Ship 4' },
-        { id: 5, name: 'Ship 5' },
-    ]
+    const startIndex = 2
 
-    const openCase = () => {
+    useEffect(() => {
+        shuffleArray()
+    }, [])
+
+    const shuffleArray = () => {
         const duplicationCount = 6
 
         let extendedArray = []
@@ -27,59 +38,82 @@ export const OpenBox = () => {
             extendedArray = extendedArray.concat(items)
         }
 
-        const shuffleArray = (array) => {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1))
-                const temp = array[i]
-                array[i] = array[j]
-                array[j] = temp
-            }
-
-            return array
+        for (let i = extendedArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+            const temp = extendedArray[i]
+            extendedArray[i] = extendedArray[j]
+            extendedArray[j] = temp
         }
 
-        const shuffledArray = shuffleArray(extendedArray)
-        setShuffledItems(shuffledArray)
+        setShuffledItems(extendedArray)
 
-        const startIndex = 3
-        const endIndex = shuffledArray.length - 3
+        const calcStart = -((blockWidth + gap) * startIndex)
+        const calcEnd = -((blockWidth + gap) * (extendedArray.length - 2))
 
-        console.log(shuffledArray)
+        setStartTranslateX(calcStart)
+        setEndTranslateX(calcEnd)
+        setTranslateX(calcStart)
+    }
 
-        const targetTranslateX = -((blockWidth + gap) * endIndex)
-        setTranslateX(-((blockWidth + gap) * startIndex))
-        setTimeout(() => setTranslateX(targetTranslateX), 10)
+    const openCase = () => {
+        setTranslateX(startTranslateX)
+        setAnimationName('')
+
+        setTimeout(() => {
+            setAnimationName('spinBox')
+            setKeyframes()
+        }, 50)
+
+        setTimeout(() => {
+            setAnimationName('')
+            setTranslateX(endTranslateX)
+        }, animationDuration)
+    }
+
+    const setKeyframes = () => {
+        const styleSheet = document.styleSheets[0]
+        const keyframeName = 'spinBox'
+        const existingKeyframes = Array.from(styleSheet.cssRules).some((rule) => rule.name === keyframeName)
+
+        if (!existingKeyframes) {
+            const keyframes = `
+            @keyframes ${keyframeName} {
+                from {
+                    transform: translateX(${startTranslateX}px);
+                }
+                to {
+                    transform: translateX(${endTranslateX}px);
+                }
+            }
+            `
+            styleSheet.insertRule(keyframes, styleSheet.cssRules.length)
+        }
     }
 
     return (
         <div className="overflow-hidden">
+            <div className="flex mt-7">
+                <div
+                    className="flex"
+                    style={{
+                        gap,
+                        animation: animationName
+                            ? `${animationName} ${animationDuration / 1000}s ease-out forwards 1s`
+                            : null,
+                        transform: animationName ? null : `translateX(${translateX}px)`,
+                        padding: `0 ${(windowWidth - blockWidth) / 2}px`,
+                    }}
+                >
+                    {shuffledItems.map((item, index) => (
+                        <Starship key={index} data={item} width={blockWidth} height={blockHeight} />
+                    ))}
+                </div>
+            </div>
+
             <div className="flex items-center justify-center mt-8">
                 <button onClick={openCase} className="px-3 py-1 bg-accent-700 text-white rounded-md mx-auto">
                     Open Case
                 </button>
-            </div>
-
-            <div className="flex mt-7">
-                {shuffledItems.length !== 0 && (
-                    <div
-                        className="flex"
-                        style={{
-                            gap,
-                            transform: `translateX(${translateX}px)`,
-                            transition: 'transform 7s ease-out',
-                            padding: `0 ${(windowWidth - blockWidth) / 2}px`,
-                        }}
-                    >
-                        {shuffledItems.map((item, index) => (
-                            <div
-                                key={index}
-                                className="w-52 h-16 flex items-center justify-center text-black-900 bg-white"
-                            >
-                                {item.name}
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
         </div>
     )
