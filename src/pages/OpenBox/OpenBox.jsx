@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
+import classNames from 'classnames'
 import { Starship } from './components/Starship'
+
+import { Button } from '@/components/UI/Buttons/Button'
 
 const photo = '/ship-ph.jpg'
 
@@ -12,11 +15,14 @@ const items = [
 ]
 
 export const OpenBox = () => {
+    const [selectedItem, setSelectedItem] = useState({})
     const [shuffledItems, setShuffledItems] = useState([])
     const [translateX, setTranslateX] = useState(0)
     const [startTranslateX, setStartTranslateX] = useState(0)
     const [endTranslateX, setEndTranslateX] = useState(0)
     const [animationName, setAnimationName] = useState('')
+
+    const [availableOpens, setAvailableOpens] = useState(3)
 
     const blockWidth = 200
     const blockHeight = 145
@@ -45,29 +51,37 @@ export const OpenBox = () => {
             extendedArray[j] = temp
         }
 
+        const randomItem = items[Math.floor(Math.random() * items.length)]
+        setSelectedItem(randomItem)
+
+        const indexToReplace = extendedArray.length - 3
+        extendedArray[indexToReplace] = randomItem
+
         setShuffledItems(extendedArray)
 
         const calcStart = -((blockWidth + gap) * startIndex)
-        const calcEnd = -((blockWidth + gap) * (extendedArray.length - 2))
+        const calcEnd = -((blockWidth + gap) * (extendedArray.length - 3))
+
+        console.log(extendedArray)
+        setTranslateX(calcStart)
 
         setStartTranslateX(calcStart)
         setEndTranslateX(calcEnd)
-        setTranslateX(calcStart)
     }
 
     const openCase = () => {
-        setTranslateX(startTranslateX)
-        setAnimationName('')
-
-        setTimeout(() => {
+        if (availableOpens > 0) {
+            shuffleArray()
+            setAvailableOpens((prev) => prev - 1)
             setAnimationName('spinBox')
             setKeyframes()
-        }, 50)
 
-        setTimeout(() => {
-            setAnimationName('')
-            setTranslateX(endTranslateX)
-        }, animationDuration)
+            setTimeout(() => {
+                setAnimationName('')
+                setTranslateX(endTranslateX)
+                console.log(selectedItem)
+            }, animationDuration)
+        }
     }
 
     const setKeyframes = () => {
@@ -78,10 +92,10 @@ export const OpenBox = () => {
         if (!existingKeyframes) {
             const keyframes = `
             @keyframes ${keyframeName} {
-                from {
+                0% {
                     transform: translateX(${startTranslateX}px);
                 }
-                to {
+                100% {
                     transform: translateX(${endTranslateX}px);
                 }
             }
@@ -91,29 +105,37 @@ export const OpenBox = () => {
     }
 
     return (
-        <div className="overflow-hidden">
-            <div className="flex mt-7">
-                <div
-                    className="flex"
-                    style={{
-                        gap,
-                        animation: animationName
-                            ? `${animationName} ${animationDuration / 1000}s ease-out forwards 1s`
-                            : null,
-                        transform: animationName ? null : `translateX(${translateX}px)`,
-                        padding: `0 ${(windowWidth - blockWidth) / 2}px`,
-                    }}
-                >
-                    {shuffledItems.map((item, index) => (
-                        <Starship key={index} data={item} width={blockWidth} height={blockHeight} />
-                    ))}
+        <div className={'py-7'}>
+            <h3 className={'font-medium text-3xl text-center'}>Standart box</h3>
+            <div className="overflow-hidden">
+                <div className="flex mt-4">
+                    <div
+                        className="flex"
+                        style={{
+                            gap,
+                            animation: animationName
+                                ? `${animationName} ${animationDuration / 1000}s ease-out forwards`
+                                : null,
+                            transform: animationName ? null : `translateX(${translateX}px)`,
+                            padding: `0 ${(windowWidth - blockWidth) / 2}px`,
+                        }}
+                    >
+                        {shuffledItems.map((item, index) => (
+                            <Starship key={index} data={item} width={blockWidth} height={blockHeight} />
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            <div className="flex items-center justify-center mt-8">
-                <button onClick={openCase} className="px-3 py-1 bg-accent-700 text-white rounded-md mx-auto">
-                    Open Case
-                </button>
+            <div
+                className={classNames(
+                    'flex items-center justify-center mt-5 relative z-10 px-5',
+                    'before:absolute before:bottom-full before:w-[31px] before:h-[33px] before:bg-[url(/boxes_pointer.svg)] before:bg-no-repeat before:bg-contain before:translate-y-2 before:-z-[1]'
+                )}
+            >
+                <Button onClick={openCase} disabled={availableOpens === 0}>
+                    {availableOpens > 0 ? `Open (x${availableOpens})` : 'No'}
+                </Button>
             </div>
         </div>
     )
