@@ -6,10 +6,11 @@ import { Button } from '@/components/UI/Buttons/Button'
 import { useWalletConnect } from '@/hooks/useWalletConnect'
 
 import { TonConnectButton } from '@tonconnect/ui-react'
-import { useTonConnectUI } from '@tonconnect/ui-react'
+import { useTonConnectUI, useTonAddress } from '@tonconnect/ui-react'
 
 export const Wallet = () => {
     const [tonConnectUI, setOptions] = useTonConnectUI()
+    const address = useTonAddress()
     const { handleConnect } = useWalletConnect()
 
     const handleButton = () => {
@@ -28,7 +29,7 @@ export const Wallet = () => {
                         'inline-block text-lg font-medium leading-none mt-5 py-2 px-5 border border-accent-500 rounded-md'
                     }
                 >
-                    123
+                    {address ? address : 'no address'}
                 </div>
                 <Button onClick={handleButton} className={'mt-3'}>
                     Connect Wallet
