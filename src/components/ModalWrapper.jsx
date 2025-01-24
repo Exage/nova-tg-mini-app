@@ -81,7 +81,7 @@ export const ModalWrapper = ({ modalId = '', children }) => {
             <div
                 ref={dialogRef}
                 className={classNames(
-                    'max-w-app-width w-full pt-5 min-h-96 bg-black-400 mx-auto mt-auto rounded-t-2xl transition-[transform] duration-300 ease-in-out'
+                    'max-w-app-width w-full pt-5 min-h-32 bg-black-400 mx-auto mt-auto rounded-t-2xl transition-[transform] duration-300 ease-in-out'
                 )}
                 onClick={handleStopPropagation}
                 onTouchStart={handleStartDrag}
