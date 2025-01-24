@@ -6,12 +6,14 @@ import { Button } from '@/components/UI/Buttons/Button'
 import { useWalletConnect } from '@/hooks/useWalletConnect'
 
 import { TonConnectButton } from '@tonconnect/ui-react'
+import { useTonConnectUI } from '@tonconnect/ui-react'
 
 export const Wallet = () => {
+    const [tonConnectUI, setOptions] = useTonConnectUI()
     const { handleConnect } = useWalletConnect()
 
     const handleButton = () => {
-        handleConnect()
+        tonConnectUI.openModal()
     }
 
     return (
@@ -28,12 +30,12 @@ export const Wallet = () => {
                 >
                     123
                 </div>
-                {/* <Button onClick={handleButton} className={'mt-3'}>
+                <Button onClick={handleButton} className={'mt-3'}>
                     Connect Wallet
-                </Button> */}
-                <div className={'flex items-center justify-center mt-3'}>
+                </Button>
+                {/* <div className={'flex items-center justify-center mt-3'}>
                     <TonConnectButton />
-                </div>
+                </div> */}
             </div>
         </ModalWrapper>
     )

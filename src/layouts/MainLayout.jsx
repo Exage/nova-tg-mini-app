@@ -11,6 +11,8 @@ import { useTelegram } from '@/hooks/useTelegram'
 import { useModals } from '@/lib/modalsStore'
 import { Wallet } from '@/modals/Wallet'
 
+import { TonConnectButton } from '@tonconnect/ui-react'
+
 export const MainLayout = () => {
     const { tg } = useTelegram()
     const overflowRef = useRef(null)
@@ -49,6 +51,9 @@ export const MainLayout = () => {
                     >
                         <img src="/wallet.svg" alt="" />
                     </button>
+                    {/* <div className={'absolute top-3 right-3'}>
+                        <TonConnectButton />
+                    </div> */}
                     <Outlet />
                 </div>
 
