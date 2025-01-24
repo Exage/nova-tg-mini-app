@@ -11,8 +11,6 @@ import { useTelegram } from '@/hooks/useTelegram'
 import { useModals } from '@/lib/modalsStore'
 import { Wallet } from '@/modals/Wallet'
 
-import { TonConnectButton } from '@tonconnect/ui-react'
-
 export const MainLayout = () => {
     const { tg } = useTelegram()
     const overflowRef = useRef(null)
@@ -42,7 +40,7 @@ export const MainLayout = () => {
                 }`}
             >
                 <div ref={overflowRef} className={'h-full overflow-auto relative'}>
-                    {/* <button
+                    <button
                         className={classNames(
                             'absolute top-3 right-3 w-11 h-11 flex items-center justify-center',
                             styles.iconStroke
@@ -50,10 +48,7 @@ export const MainLayout = () => {
                         onClick={() => openModal('walletModal')}
                     >
                         <img src="/wallet.svg" alt="" />
-                    </button> */}
-                    <div className={'absolute top-3 right-3'}>
-                        <TonConnectButton />
-                    </div>
+                    </button>
                     <Outlet />
                 </div>
 
