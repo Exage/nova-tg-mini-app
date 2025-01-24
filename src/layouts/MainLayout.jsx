@@ -1,10 +1,15 @@
 import React, { useRef, useEffect } from 'react'
+import styles from '@/Core.module.scss'
+import classNames from 'classnames'
 
 import { Outlet, useLocation } from 'react-router'
 
 import { Navigation } from '@/components/Navigation'
 
 import { useTelegram } from '@/hooks/useTelegram'
+
+import { useModals } from '@/lib/modalsStore'
+import { Wallet } from '@/modals/Wallet'
 
 export const MainLayout = () => {
     const { tg } = useTelegram()
@@ -13,6 +18,8 @@ export const MainLayout = () => {
     const { platform } = useTelegram()
 
     const { pathname } = useLocation()
+
+    const { openModal } = useModals()
 
     useEffect(() => {
         if (overflowRef.current) {
@@ -26,16 +33,29 @@ export const MainLayout = () => {
     }, [tg])
 
     return (
-        <div
-            className={`h-screen bg-[url("/main-layout-bg.svg")] bg-center bg-cover bg-no-repeat ${
-                platform === 'ios' ? 'pb-[6.25rem]' : 'pb-20'
-            }`}
-        >
-            <div ref={overflowRef} className={'h-full overflow-auto'}>
-                <Outlet />
+        <>
+            <div
+                className={`h-screen bg-[url("/main-layout-bg.svg")] bg-center bg-cover bg-no-repeat ${
+                    platform === 'ios' ? 'pb-[6.25rem]' : 'pb-20'
+                }`}
+            >
+                <div ref={overflowRef} className={'h-full overflow-auto relative'}>
+                    <button
+                        className={classNames(
+                            'absolute top-3 right-3 w-11 h-11 flex items-center justify-center',
+                            styles.iconStroke
+                        )}
+                        onClick={() => openModal('walletModal')}
+                    >
+                        <img src="/wallet.svg" alt="" />
+                    </button>
+                    <Outlet />
+                </div>
+
+                <Navigation />
             </div>
 
-            <Navigation />
-        </div>
+            <Wallet />
+        </>
     )
 }
