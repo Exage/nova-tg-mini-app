@@ -9,7 +9,7 @@ import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <TonConnectUIProvider manifestUrl='https://nova-tg-mini-app-git-tonconnect-exages-projects.vercel.app/tonconnect-manifest.json'>
+        <TonConnectUIProvider manifestUrl='https://nova-tg-mini-app.vercel.app/tonconnect-manifest.json'>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
