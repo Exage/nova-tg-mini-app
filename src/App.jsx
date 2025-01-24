@@ -28,14 +28,9 @@ function App() {
     const { tg } = useTelegram()
 
     useEffect(() => {
-        tg.ready()
         tg.disableVerticalSwipes()
         tg.lockOrientation()
         tg.expand()
-
-        return () => {
-            tg.close()
-        }
     }, [tg])
 
     return (
